@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>34e7ab24-a0c4-4b4f-ba9c-87bac8d467f6</ProjectGuid>
+    <ProjectGuid>{1524E56E-BDF8-4999-B433-20EA64B2E9F3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ServerControl1</RootNamespace>
@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,9 +44,15 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ServerControl1.cs" />
+    <Compile Include="lib\Config.cs" />
+    <Compile Include="lib\List.cs" />
+    <Compile Include="lib\Sql.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uco\dotchi.cs" />
+    <Compile Include="uco\dao\dotchi.cs" />
+    <Compile Include="uco\model\dotchi.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

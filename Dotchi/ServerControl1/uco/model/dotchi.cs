@@ -5,15 +5,23 @@ namespace util.uco.model.dotchi
     /// <summary>
     /// 會員資料
     /// </summary>
-    public class Member
+    public class MemberInfo
     {
         /// <summary>
-        /// 問題代號
+        /// ID
         /// </summary>
-        public string QuestionID { get; set; }
+        public string ID { get; set; }
+        /// <summary>
+        /// Name
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
+        /// Image
+        /// </summary>
+        public string Image { get; set; }
         /// <summary>
         /// 選擇的選項代號
         /// </summary>
-        public List<string> OptionID { get; set; }
+        //public List<string> OptionID { get; set; }
     }
 }

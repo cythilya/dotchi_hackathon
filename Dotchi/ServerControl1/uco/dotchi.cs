@@ -6,21 +6,14 @@ using util.uco.model.dotchi;
 
 namespace util.uco
 {
-    class class dotchi
+    public class dotchi
     {
         /// <summary>
-        /// 問卷答案
+        /// 儲存會員資料
         /// </summary>
-        public class Answer
+        public bool SaveMember(MemberInfo memberinfo)
         {
-            /// <summary>
-            /// 問題代號
-            /// </summary>
-            public string QuestionID { get; set; }
-            /// <summary>
-            /// 選擇的選項代號
-            /// </summary>
-            public List<string> OptionID { get; set; }
+            return dao.dotchi.SaveMember(memberinfo);
         }
     }
 }

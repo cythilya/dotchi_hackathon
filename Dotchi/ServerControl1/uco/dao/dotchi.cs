@@ -4,40 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
-//using util.lib;
-//using util.uco.model.hty;
+using util.lib;
+using util.uco.model.dotchi;
 
-namespace ServerControl1.uco.dao
+namespace util.uco.dao
 {
-    class dotchi
+    public class dotchi
     {
         //fb 註冊為會員
-        internal static bool SaveAnswer(string member_id, List<Answer> answers)
+        internal static bool SaveMember(MemberInfo memberinfo)
         {
             string sql = @"
-insert into hty.answer
-(member_id, quiz_id, opt_id)
+insert into member
+(ID, Name, Image)
 values
-(@member_id, @quiz_id{0}, @opt_id{0})
+(@id, @Name, @Image)
 ";
-            List<SqlCommand> cmds = new List<SqlCommand>();
-            foreach (Answer a in answers)
-            {
-                for (int i = 0; i < a.OptionID.Count; i++)
-                {
-                    SqlCommand cmd = new SqlCommand(string.Format(sql, i.ToString()));
-
-                    cmd.Parameters.AddWithValue("@member_id", member_id);
-                    cmd.Parameters.AddWithValue(string.Format("@member_id{0}", i.ToString()), member_id);
-                    cmd.Parameters.AddWithValue(string.Format("@quiz_id{0}", i.ToString()), a.QuestionID);
-                    cmd.Parameters.AddWithValue(string.Format("@opt_id{0}", i.ToString()), a.OptionID[i]);
-
-                    cmds.Add(cmd);
-                }
-            }
-
             Sql u = new Sql();
-            return u.ExecSQLs(cmds) == cmds.Count;
+            using (SqlCommand cmd = new SqlCommand(sql))
+            {
+                cmd.Parameters.AddWithValue("@id", memberinfo.ID);
+                cmd.Parameters.AddWithValue("@Name", memberinfo.Name);
+                cmd.Parameters.AddWithValue("@Image", memberinfo.Image);
+                return u.ExecSQL(cmd) == 1;
+            }
         }
 
     }
