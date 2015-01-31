@@ -1,11 +1,11 @@
-﻿* html .u0_normal {
-    background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u0_normal.png");
-}
-
-* html .u2_normal {
+﻿* html .u2_normal {
     background-image: none;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u2_normal.png");
+}
+
+* html .u4_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u4_normal.png");
 }
 
 * html .u6_normal {
@@ -18,118 +18,133 @@
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u8_normal.png");
 }
 
-* html .u10_normal {
+* html .u21_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u8_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u21_normal.png");
 }
 
-* html .u12_normal {
+* html .u23_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u8_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u23_normal.png");
 }
 
-* html .u14_normal {
+* html .u27_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u8_normal.png");
-}
-
-* html .u22_normal {
-    background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u22_normal.png");
-}
-
-* html .u24_normal {
-    background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u24_normal.png");
-}
-
-* html .u26_normal {
-    background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u26_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u27_normal.png");
 }
 
 * html .u29_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u29_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u27_normal.png");
 }
 
 * html .u31_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u31_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u27_normal.png");
 }
 
-* html .u33_line {
+* html .u33_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u33_line.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u27_normal.png");
 }
 
-* html .u35_normal {
+* html .u37_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u35_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u37_normal.png");
 }
 
-* html .u46_normal {
+* html .u39_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u46_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u39_normal.png");
 }
 
-* html .u48_normal {
+* html .u41_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u46_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u41_normal.png");
 }
 
-* html .u50_normal {
+* html .u43_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u46_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u23_normal.png");
 }
 
-* html .u52_normal {
+* html .u47_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u46_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u27_normal.png");
 }
 
-* html .u54_normal {
+* html .u49_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u46_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u27_normal.png");
 }
 
-* html .u56_normal {
+* html .u51_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u46_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u27_normal.png");
 }
 
-* html .u58_normal {
+* html .u53_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u46_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u27_normal.png");
 }
 
-* html .u60_normal {
+* html .u57_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u46_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u37_normal.png");
 }
 
-* html .u62_normal {
+* html .u59_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u46_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u39_normal.png");
 }
 
-* html .u65_line {
+* html .u67_line {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u65_line.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u67_line.png");
 }
 
-* html .u69_normal {
+* html .u68_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u69_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u68_normal.png");
 }
 
-* html .u71_normal {
+* html .u70_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u71_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u70_normal.png");
 }
 
-* html .u73_normal {
+* html .u72_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u73_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u72_normal.png");
+}
+
+* html .u74_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u74_normal.png");
+}
+
+* html .u78_line {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u78_line.png");
+}
+
+* html .u80_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u80_normal.png");
+}
+
+* html .u82_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u82_normal.png");
+}
+
+* html .u84_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u82_normal.png");
+}
+
+* html .u86_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fb_user_files/u86_normal.png");
 }
 
