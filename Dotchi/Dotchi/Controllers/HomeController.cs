@@ -20,16 +20,61 @@ namespace Dotchi.Controllers
         {
             GetShopList();
             GetTagList();
+            GetMemberInfo();
             ViewBag.QueryString = q;
             return View();
         }
         #endregion
 
         #region function
+        public JsonResult SaveMemberInfo(string MemberID, string MemberName, string MemberImage) 
+        {
+            var jsonObject = new { IsSuccess = false, ErrorMessage = "", ReturnData = "" };
+            return Json(jsonObject); 
+        }
+        public void GetMemberInfo() 
+        {
+            Dotchi.Models.Dotchi.MemberInfo memberInfo = new Dotchi.Models.Dotchi.MemberInfo();
+
+            //get fbuid
+            string memberID = "";
+            HttpCookie FBUIDinCookie = new HttpCookie("FBUID");
+            FBUIDinCookie = Request.Cookies["FBUID"];
+
+            if (FBUIDinCookie != null)
+            {
+                memberID = FBUIDinCookie.Value;
+            }
+
+            //get memner name
+            string memberName = "";
+            HttpCookie NameinCookie = new HttpCookie("Name");
+            NameinCookie = Request.Cookies["Name"];
+
+            if (NameinCookie != null)
+            {
+                memberName = NameinCookie.Value;
+            }
+
+            //get member image
+            string memberImage = "";
+            HttpCookie ImageinCookie = new HttpCookie("UserImage");
+            ImageinCookie = Request.Cookies["UserImage"];
+
+            if (ImageinCookie != null)
+            {
+                memberImage = ImageinCookie.Value;
+            }
+
+            memberInfo.ID = memberID;
+            memberInfo.Name = memberName;
+            memberInfo.Image = memberImage;
+
+            ViewBag.MemberInfo = memberInfo;
+        }
         public List<Dotchi.Models.Dotchi.ShopInfo> GetShopList()
         {
             List<Dotchi.Models.Dotchi.ShopInfo> shopList = new List<Dotchi.Models.Dotchi.ShopInfo>();
-
             #region sample data - shop list
 
             //shop 1
@@ -232,7 +277,6 @@ namespace Dotchi.Controllers
             shopList.Add(shop3);
 
             #endregion
-            
             ViewBag.ShopList = shopList;
             return shopList;      
         }
