@@ -54,7 +54,7 @@
             @foreach(var tagItem in RecommendTagList)
             {
                 <li>
-                    <a class="//Home/Search?q="@(tagItem.Name)>
+                    <a class="tagLink" href="/Home/Search?q=@(tagItem.Name)">
                         <span class="tagName">@(tagItem.Name)</span>
                         <span class="shopNumer">@(tagItem.Number)</span>
                     </a>
