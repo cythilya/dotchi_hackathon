@@ -19,8 +19,41 @@ SP.module = {
     inherit: function(Child, Parent){
         Child.prototype = new Parent();
     },
-    pageIndex: function(dModule){
+    index: function(dModule){
 		var dModule = $(dModule);
+		var dSearchBtn = dModule.find('.search.button');
+		var dFBLoginBtn = dModule.find('.fb.button');
+		var dQueryInput = dModule.find('.query');
+		
+		dSearchBtn.click(function(e){
+			e.preventDefault();
+			
+			var queryString = $.trim(dQueryInput.val());
+			
+			if(queryString){
+				top.location.href = '/Home/Search?q=' + queryString;
+			}
+			else{
+				top.location.href = '/Home/Search';
+			}
+		});
+		
+		dFBLoginBtn.click(function(e){
+			e.preventDefault();
+			
+            var dThisLoginBtn = $(this);
+			FB.getLoginStatus(function (response) {
+				if (response.status === 'connected') {
+					top.location.href = '/Home/Search';
+				}
+				else {
+					FB.login(function (response) {
+						top.location.href = '/Home/Search';
+					});
+				}
+			});
+		});		
+		
     },	
     pageSearchResult: function(dModule){
 		var dModule = $(dModule);
@@ -35,6 +68,6 @@ SP.module = {
             objFunction(dTarget);
         }                
     };
-    doWhileExist('pageIndex',SP.module.pageIndex);
+    doWhileExist('index',SP.module.index);
     doWhileExist('pageSearchResult',SP.module.pageSearchResult);
 })();
