@@ -62,6 +62,9 @@ SP.module = {
 								var Name = res.first_name + res.last_name;
 								var UserImage = 'http://graph.facebook.com/'+ ID + '/picture?width=40&height=40';
 
+								//save cookie
+								document.cookie = 'FBUID=' + ID + '; path=/';
+
 								$.ajax({
 									url: '/Home/SaveMemberInfo',
 									type: 'post',
@@ -81,21 +84,8 @@ SP.module = {
 										else {
 											alert('請稍後再試一次。');
 										}
-									},
-									complete: function () {
-										//delete cookie
-										//document.cookie = name+"=;expires="+(new Date(0)).toGMTString();
 									}
 								});								
-								//save cookie
-								//document.cookie = 'FBUID=' + ID + '; path=/';
-								//document.cookie = 'Name=' + Name + '; path=/';
-								//document.cookie = 'UserImage=' + UserImage + '; path=/';
-								
-								//console.log(document.cookie);
-								//if (res.name) {
-								//	Name = res.name;
-								//}
 							}
 						});
 						//top.location.href = '/Home/Search';
