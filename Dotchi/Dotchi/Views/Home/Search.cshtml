@@ -1,13 +1,21 @@
 ﻿@{
     ViewBag.Title = "Search";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<Dotchi.Models.Dochi.ShopInfo> ShopList = ViewBag.ShopList as List<Dotchi.Models.Dochi.ShopInfo>;
-    List<Dotchi.Models.Dochi.RecommendTag> RecommendTagList = ViewBag.RecommendTag as List<Dotchi.Models.Dochi.RecommendTag>;
+    List<Dotchi.Models.Dotchi.ShopInfo> ShopList = ViewBag.ShopList as List<Dotchi.Models.Dotchi.ShopInfo>;
+    List<Dotchi.Models.Dotchi.RecommendTag> RecommendTagList = ViewBag.RecommendTag as List<Dotchi.Models.Dotchi.RecommendTag>;
 }
 <div id="pageSearchResult">
     <div class="header">
+        <div class="inputArea">
+			<input type="text" value="@(ViewBag.QueryString)" class="queryInput" placeholder="請輸入地區" />
+			<a href="#" class="button search"><span>尋找餐廳</span></a>
+		</div>	
+		<div class="fbArea">
+			<a href="#" class="button fb"><span>FB登入</span></a>
+			<div class="user"><img alt="" src="https://graph.facebook.com/100000133231966/picture?type=large"></div>
+		</div>
         <div class="searchbar">
-            <div class="searchbox">@(ViewBag.QueryString)</div>
+            <div class="searchbox"><input type="text" value="@(ViewBag.QueryString)"></div>
             <a class="searchbutton" href="#">找餐廳</a>
         </div>
         <a class="fbLogin"></a>

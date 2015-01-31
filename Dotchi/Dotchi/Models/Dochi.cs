@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Dotchi.Models
 {
-    public class Dochi
+    public class Dotchi
     {
         public class ShopInfo
         {

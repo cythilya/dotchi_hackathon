@@ -52,12 +52,42 @@ SP.module = {
 					});
 				}
 			});
-		});		
-		
+		});	
     },	
     pageSearchResult: function(dModule){
 		var dModule = $(dModule);
+		var dQueryInput = dModule.find('.queryInput');
+		var dSearchBtn = dModule.find('.search.button');
+		var dFBLoginBtn = dModule.find('.fb.button');
 
+		dSearchBtn.click(function(e){
+			e.preventDefault();
+			
+			var queryString = $.trim(dQueryInput.val());
+			if(queryString){
+				top.location.href = '/Home/Search?q=' + queryString;
+			}
+			else{
+				top.location.href = '/Home/Search';
+			}
+		});
+		
+		dFBLoginBtn.click(function(e){
+			e.preventDefault();
+			
+            var dThisLoginBtn = $(this);
+			FB.getLoginStatus(function (response) {
+				if (response.status === 'connected') {
+					top.location.href = '/Home/Search';
+				}
+				else {
+					FB.login(function (response) {
+						top.location.href = '/Home/Search';
+					});
+				}
+			});
+		});			
+		
 
     }
 };
