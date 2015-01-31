@@ -14,13 +14,21 @@
 			<a href="#" class="button fb"><span>FB登入</span></a>
 			<div class="user"><img alt="" src="https://graph.facebook.com/100000133231966/picture?type=large"></div>
 		</div>
-        <div class="searchbar">
-            <div class="searchbox"><input type="text" value="@(ViewBag.QueryString)"></div>
-            <a class="searchbutton" href="#">找餐廳</a>
-        </div>
-        <a class="fbLogin"></a>
     </div>
     <div class="main">
+        <div class="tagArea">
+            <ul class="tagLst">
+                @foreach(var tagItem in RecommendTagList)
+                {
+                    <li>
+                        <a class="tagLink" href="/Home/Search?q=@(tagItem.Name)">
+                            <span class="tagName">@(tagItem.Name)</span>
+                            <span class="shopNumer">@(tagItem.Number)</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
         @foreach (var shopItem in ShopList) 
         { 
         <div class="shopInfo">
@@ -58,18 +66,5 @@
             </div>
         </div>
         }
-        <div class="tagArea">
-            <ul class="tagLst">
-                @foreach(var tagItem in RecommendTagList)
-                {
-                    <li>
-                        <a class="tagLink" href="/Home/Search?q=@(tagItem.Name)">
-                            <span class="tagName">@(tagItem.Name)</span>
-                            <span class="shopNumer">@(tagItem.Number)</span>
-                        </a>
-                    </li>
-                }
-            </ul>
-        </div>
     </div>
 </div>
