@@ -1,0 +1,123 @@
+body ,html {
+    height: 100%;
+    font-family: '微軟正黑體';
+	font-size: 13px;
+}
+
+.dotch{
+	position: relative;
+	&:after{
+		content:"";
+		background:#d15d36;
+		width: 100%;
+		height: 10px;
+		display:block;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&#index{
+		// height: 100%;
+		// background:url(../img/ba.jpg) no-repeat center top;
+		// background-size:100% auto;
+		.main{
+			width: 960px;
+			margin: 0 auto;
+			padding: 50px 0px;
+			text-align: center;
+			h1{
+				background:url(../img/h1.png) no-repeat;
+				width: 280px;
+				height: 261px;
+				text-indent: -9999px;
+				text-align: center;
+				margin: 40px auto;
+			}
+			h2{
+				font-size: 30px;
+				color: #666;
+				text-align: center;
+			}
+			.inputArea{
+				width: 515px;
+				margin: 30px auto;
+				input {
+				  width: 515px;
+				  padding: 10px;
+				  border: solid 1px #CCC;
+				  outline: none;
+				  border-radius: 5px;
+				  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.05);
+				  border-right-color: #EEE;
+				  border-bottom-color: #EEE;
+				  color: #006595;
+				}
+			}
+			.button{
+				position: relative;
+				padding: 10px 0px;
+			  	width: 145px;
+			  	display: inline-block;
+			  	vertical-align: top;
+				border-radius: 10px;
+				color: #FFF;
+				text-decoration: none;	
+				transition: all 0.1s;
+			}
+			.button+.button{
+				margin-left: 15px;
+			}
+			.search{
+				background-color: #d15d36;
+				border-bottom: 5px solid #a74a2b;
+				text-shadow: 0px -2px #a74a2b;
+				&:after{
+					content:"";
+					background:url(../img/index_search.png) no-repeat;
+					display: block;
+					position: absolute;
+					width: 18px;
+					height: 29px;
+					top: 12px;
+					left: 12px;
+				}
+				span{
+					font-size: 24px;
+					display: block;
+					height: 30px;
+					margin: 2px 0px 0px 18px;
+				}
+			}
+			.fb{
+				background-color: #3b5998;
+				border-bottom: 5px solid #2f477a;
+				text-shadow: 0px -2px #2f477a;
+				padding: 10px 0px 12px;
+				&:after{
+					content:"";
+					background:url(../img/index_fb.png) no-repeat;
+					display: block;
+					position: absolute;
+					width: 17px;
+					height: 32px;
+					top: 11px;
+					left: 20px;
+				}
+				span{
+					font-size: 16px;
+					display: block;
+					width: 70px;
+					height: 30px;
+					margin-left: 50px;
+				}
+			}
+			.button:active{
+				transform: translate(0px,5px);
+				border-bottom: 1px solid;
+			}
+		}
+	}
+	&#page{
+		
+	}
+}

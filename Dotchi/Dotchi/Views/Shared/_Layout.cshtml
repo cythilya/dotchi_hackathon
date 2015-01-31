@@ -11,26 +11,13 @@
 <meta name="description" content="@(ViewBag.Description)" />
 <link rel="stylesheet" href="/Content/common/css/reset-font-min.css">
 <link rel="stylesheet" href="/Content/common/css/clearfix.css">
-<link rel="stylesheet" href="/Content/dotchi/skin/style.css">
-<style>
-body
-{
-    background: #eee;
-    width: 100%;
-    overflow: hidden;
-}
-img
-{
-    display: block;
-    width: 960px;
-    margin: 0 auto;
- }
-</style>
-
+<link rel="stylesheet" href="/Content/dotchi/css/style.css">
 </head>
 <body>
-    @RenderBody()
-<script src="/Content/common/js/jquery-1.8.2.min.js"></script>
-<script src="/Content/dotchi/js/script.js"></script>
+@RenderBody()
+<script src="/Content/common/js/jquery-1.8.2.min.js" type="script"></script>
+<script src="/Content/common/js/facebook.js" type="script" data-appid=1399777113657271></script>
+<script src="/Content/common/js/jquery.cookie.js" type="script"></script>
+<script src="/Content/dotchi/js/script.js" type="script"></script>
 </body>
 </html>

@@ -19,24 +19,101 @@ SP.module = {
     inherit: function(Child, Parent){
         Child.prototype = new Parent();
     },
-    moduleA: function(dModule){
-        var dDIV = $(dModule).find('div').each(function(index,item){
-        //var dDIV = $('.moduleA div').each(function(index,item){
-            //$(item).html(index+1);
-            switch(index+1){
-                case 1:
-                    $(item).html('a');
-                    break;
-                case 2:
-                    $(item).html('b');
-                    break;
-                case 3:
-                    $(item).html('c');
-                    break;
-                default:
-                    break;
-            }
-        });
+    index: function(dModule){
+		var dModule = $(dModule);
+		var dSearchBtn = dModule.find('.search.button');
+		var dFBLoginBtn = dModule.find('.fb.button');
+		var dQueryInput = dModule.find('.query');
+		
+		//remove cookie
+		$.removeCookie('FBUID');		
+		$.removeCookie('Name');		
+		$.removeCookie('UserImage');		
+		
+		//search something
+		dSearchBtn.click(function(e){
+			e.preventDefault();
+			
+			var queryString = $.trim(dQueryInput.val());
+			
+			if(queryString){
+				top.location.href = '/Home/Search?q=' + queryString;
+			}
+			else{
+				top.location.href = '/Home/Search';
+			}
+		});
+		
+		//facebook login
+		dFBLoginBtn.click(function(e){
+			e.preventDefault();
+			
+            var dThisLoginBtn = $(this);
+			FB.getLoginStatus(function (response) {
+				if (response.status === 'connected') {
+				
+					FB.api('/me', function (response) {
+						if (!response || response.error) {
+							//取不到資料，報錯
+							alert('系統有誤，請重新再試一次。');
+						}
+						else {
+							ID = response.id;
+							Name = response.first_name + response.last_name
+							UserImage = 
+							birthday = response.birthday;
+
+							document.cookie = 'FBUID=' + ID + '; path=/';
+							if (response.name) {
+								name = response.name;
+							}
+						}
+					}			
+					//top.location.href = '/Home/Search';
+				}
+				else {
+					FB.login(function (response) {
+						//top.location.href = '/Home/Search';
+					});
+				}
+			});
+		});	
+    },	
+    pageSearchResult: function(dModule){
+		var dModule = $(dModule);
+		var dQueryInput = dModule.find('.queryInput');
+		var dSearchBtn = dModule.find('.search.button');
+		var dFBLoginBtn = dModule.find('.fb.button');
+
+		dSearchBtn.click(function(e){
+			e.preventDefault();
+			
+			var queryString = $.trim(dQueryInput.val());
+			if(queryString){
+				top.location.href = '/Home/Search?q=' + queryString;
+			}
+			else{
+				top.location.href = '/Home/Search';
+			}
+		});
+		
+		dFBLoginBtn.click(function(e){
+			e.preventDefault();
+			
+            var dThisLoginBtn = $(this);
+			FB.getLoginStatus(function (response) {
+				if (response.status === 'connected') {
+					top.location.href = '/Home/Search';
+				}
+				else {
+					FB.login(function (response) {
+						top.location.href = '/Home/Search';
+					});
+				}
+			});
+		});			
+		
+
     }
 };
 (function(){
@@ -46,5 +123,6 @@ SP.module = {
             objFunction(dTarget);
         }                
     };
-    doWhileExist('moduleA',SP.module.moduleA);
+    doWhileExist('index',SP.module.index);
+    doWhileExist('pageSearchResult',SP.module.pageSearchResult);
 })();

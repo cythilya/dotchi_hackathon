@@ -26,14 +26,14 @@ namespace Dotchi.Controllers
         #endregion
 
         #region function
-        public List<Dotchi.Models.Dochi.ShopInfo> GetShopList()
+        public List<Dotchi.Models.Dotchi.ShopInfo> GetShopList()
         {
-            List<Dotchi.Models.Dochi.ShopInfo> shopList = new List< Dotchi.Models.Dochi.ShopInfo>();
+            List<Dotchi.Models.Dotchi.ShopInfo> shopList = new List<Dotchi.Models.Dotchi.ShopInfo>();
 
             #region sample data - shop list
 
             //shop 1
-            Dotchi.Models.Dochi.ShopInfo shop1 = new Dotchi.Models.Dochi.ShopInfo();
+            Dotchi.Models.Dotchi.ShopInfo shop1 = new Dotchi.Models.Dotchi.ShopInfo();
             shop1.ID = 1;
             shop1.Name = "くら寿司 藏壽司 Kura Sushi 松江南京店";
             shop1.Rating = 4;
@@ -45,26 +45,26 @@ namespace Dotchi.Controllers
             shop1.Price = "1000";
             shop1.Website = "https://www.facebook.com/kurasushi.songjiangnanjing";
 
-            List<Dotchi.Models.Dochi.FriendInfo> FriendList = new List<Dotchi.Models.Dochi.FriendInfo>();
-            Dotchi.Models.Dochi.FriendInfo friendItem1 = new Dotchi.Models.Dochi.FriendInfo();
+            List<Dotchi.Models.Dotchi.FriendInfo> FriendList = new List<Dotchi.Models.Dotchi.FriendInfo>();
+            Dotchi.Models.Dotchi.FriendInfo friendItem1 = new Dotchi.Models.Dotchi.FriendInfo();
             friendItem1.ID = "123456";
             friendItem1.Name = "Leah Yeh";
             friendItem1.Thumbnail = "http://goo.gl/hpGixd";
             FriendList.Add(friendItem1);
 
-            Dotchi.Models.Dochi.FriendInfo friendItem2 = new Dotchi.Models.Dochi.FriendInfo();
+            Dotchi.Models.Dotchi.FriendInfo friendItem2 = new Dotchi.Models.Dotchi.FriendInfo();
             friendItem2.ID = "123457";
             friendItem2.Name = "Lala Hsu";
             friendItem2.Thumbnail = "http://goo.gl/B1JLkw";
             FriendList.Add(friendItem2);
 
-            Dotchi.Models.Dochi.FriendInfo friendItem3 = new Dotchi.Models.Dochi.FriendInfo();
+            Dotchi.Models.Dotchi.FriendInfo friendItem3 = new Dotchi.Models.Dotchi.FriendInfo();
             friendItem3.ID = "123458";
             friendItem3.Name = "王悅竹";
             friendItem3.Thumbnail = "http://goo.gl/LmRtt5";
             FriendList.Add(friendItem3);
 
-            Dotchi.Models.Dochi.FriendInfo friendItem4 = new Dotchi.Models.Dochi.FriendInfo();
+            Dotchi.Models.Dotchi.FriendInfo friendItem4 = new Dotchi.Models.Dotchi.FriendInfo();
             friendItem4.ID = "123459";
             friendItem4.Name = "Amber Chen";
             friendItem4.Thumbnail = "http://goo.gl/qvyBaS";
@@ -72,27 +72,27 @@ namespace Dotchi.Controllers
 
             shop1.FriendDetail = FriendList;
 
-            List<Dotchi.Models.Dochi.Comment> CommentList = new List<Dotchi.Models.Dochi.Comment>();
+            List<Dotchi.Models.Dotchi.Comment> CommentList = new List<Dotchi.Models.Dotchi.Comment>();
 
-            Dotchi.Models.Dochi.Comment comment1 = new Dotchi.Models.Dochi.Comment();
+            Dotchi.Models.Dotchi.Comment comment1 = new Dotchi.Models.Dotchi.Comment();
             comment1.ID = "12345yhte6u6uj7i7i7";
             comment1.Time = DateTime.Now;
             comment1.Image = "http://goo.gl/5XWi7U";
             comment1.Text = "覺得跟上潮流的壽司午餐，囂張一百分。全部都好好吃喔！轉蛋超好玩的！但我不想要豆皮壽司。";
             
-            Dotchi.Models.Dochi.UserInfo userInfo1 = new Dotchi.Models.Dochi.UserInfo();
+            Dotchi.Models.Dotchi.UserInfo userInfo1 = new Dotchi.Models.Dotchi.UserInfo();
             userInfo1.UserName = "Leah Yeh";
             userInfo1.UserImage = "http://goo.gl/hpGixd";
             comment1.UserDetail = userInfo1;
             CommentList.Add(comment1);
 
-            Dotchi.Models.Dochi.Comment comment2 = new Dotchi.Models.Dochi.Comment();
+            Dotchi.Models.Dotchi.Comment comment2 = new Dotchi.Models.Dotchi.Comment();
             comment2.ID = "12345yhte6u6uj7i7i7";
             comment2.Time = DateTime.Now;
             comment2.Image = "http://ppt.cc/SVyx";
             comment2.Text = "好好吃，我們一直點一直點，好吃又好玩";
 
-            Dotchi.Models.Dochi.UserInfo userInfo2 = new Dotchi.Models.Dochi.UserInfo();
+            Dotchi.Models.Dotchi.UserInfo userInfo2 = new Dotchi.Models.Dotchi.UserInfo();
             userInfo2.UserName = "Jill Tzeng";
             userInfo2.UserImage = "http://ppt.cc/jTLo";
             comment2.UserDetail = userInfo2;
@@ -101,7 +101,7 @@ namespace Dotchi.Controllers
             shopList.Add(shop1);
 
             //shop 2
-            Dotchi.Models.Dochi.ShopInfo shop2 = new Dotchi.Models.Dochi.ShopInfo();
+            Dotchi.Models.Dotchi.ShopInfo shop2 = new Dotchi.Models.Dotchi.ShopInfo();
             shop2.ID = 1;
             shop2.Name = "禾鶴亭日本料理餐廳";
             shop2.Rating = 4;
@@ -113,20 +113,20 @@ namespace Dotchi.Controllers
             shop2.Price = "300~500";
             shop2.Website = "https://www.facebook.com/Nogitsurutei";
 
-            List<Dotchi.Models.Dochi.FriendInfo> FriendList2 = new List<Dotchi.Models.Dochi.FriendInfo>();
-            Dotchi.Models.Dochi.FriendInfo friendItem21 = new Dotchi.Models.Dochi.FriendInfo();
+            List<Dotchi.Models.Dotchi.FriendInfo> FriendList2 = new List<Dotchi.Models.Dotchi.FriendInfo>();
+            Dotchi.Models.Dotchi.FriendInfo friendItem21 = new Dotchi.Models.Dotchi.FriendInfo();
             friendItem21.ID = "223456";
             friendItem21.Name = "Joy Wu";
             friendItem21.Thumbnail = "http://ppt.cc/30po";
             FriendList2.Add(friendItem21);
 
-            Dotchi.Models.Dochi.FriendInfo friendItem22 = new Dotchi.Models.Dochi.FriendInfo();
+            Dotchi.Models.Dotchi.FriendInfo friendItem22 = new Dotchi.Models.Dotchi.FriendInfo();
             friendItem22.ID = "223457";
             friendItem22.Name = "Lin Serena";
             friendItem22.Thumbnail = "http://ppt.cc/NtoW";
             FriendList2.Add(friendItem22);
 
-            Dotchi.Models.Dochi.FriendInfo friendItem23 = new Dotchi.Models.Dochi.FriendInfo();
+            Dotchi.Models.Dotchi.FriendInfo friendItem23 = new Dotchi.Models.Dotchi.FriendInfo();
             friendItem23.ID = "223458";
             friendItem23.Name = "Chia Ling";
             friendItem23.Thumbnail = "http://ppt.cc/uIeZ";
@@ -135,27 +135,27 @@ namespace Dotchi.Controllers
 
             shop2.FriendDetail = FriendList;
 
-            List<Dotchi.Models.Dochi.Comment> CommentList2 = new List<Dotchi.Models.Dochi.Comment>();
+            List<Dotchi.Models.Dotchi.Comment> CommentList2 = new List<Dotchi.Models.Dotchi.Comment>();
 
-            Dotchi.Models.Dochi.Comment comment21 = new Dotchi.Models.Dochi.Comment();
+            Dotchi.Models.Dotchi.Comment comment21 = new Dotchi.Models.Dotchi.Comment();
             comment21.ID = "13345yhte6u6uj7i7i7";
             comment21.Time = DateTime.Now;
             comment21.Image = "http://ppt.cc/hBjW";
             comment21.Text = "最推薦的還是生魚片蓋飯，魚貨夠新鮮，視覺也被滿足，價格上雖不比剛歇業的三大便宜，但也算可以接受吃不飽的話可以再加點親子丼或是壽司類的餐點。";
 
-            Dotchi.Models.Dochi.UserInfo userInfo21 = new Dotchi.Models.Dochi.UserInfo();
+            Dotchi.Models.Dotchi.UserInfo userInfo21 = new Dotchi.Models.Dotchi.UserInfo();
             userInfo21.UserName = "Ryan Liang";
             userInfo21.UserImage = "http://ppt.cc/SNxh";
             comment21.UserDetail = userInfo1;
             CommentList2.Add(comment21);
 
-            Dotchi.Models.Dochi.Comment comment22 = new Dotchi.Models.Dochi.Comment();
+            Dotchi.Models.Dotchi.Comment comment22 = new Dotchi.Models.Dotchi.Comment();
             comment22.ID = "22345yhte6u6uj7i7i7";
             comment22.Time = DateTime.Now;
             comment22.Image = "http://ppt.cc/HLq-";
             comment22.Text = "海膽丼看起來很好吃，炸蝦size很大。";
 
-            Dotchi.Models.Dochi.UserInfo userInfo22 = new Dotchi.Models.Dochi.UserInfo();
+            Dotchi.Models.Dotchi.UserInfo userInfo22 = new Dotchi.Models.Dotchi.UserInfo();
             userInfo22.UserName = "Wang Big-frog ";
             userInfo22.UserImage = "http://ppt.cc/gN0m";
             comment22.UserDetail = userInfo22;
@@ -164,7 +164,7 @@ namespace Dotchi.Controllers
             shopList.Add(shop2);
 
             //shop 3
-            Dotchi.Models.Dochi.ShopInfo shop3 = new Dotchi.Models.Dochi.ShopInfo();
+            Dotchi.Models.Dotchi.ShopInfo shop3 = new Dotchi.Models.Dotchi.ShopInfo();
             shop3.ID = 1;
             shop3.Name = "品盛悅素軒-蔬食素食";
             shop3.Rating = 4;
@@ -176,26 +176,26 @@ namespace Dotchi.Controllers
             shop3.Price = "100~200";
             shop3.Website = "https://www.facebook.com/PinShengDVH";
 
-            List<Dotchi.Models.Dochi.FriendInfo> FriendList3 = new List<Dotchi.Models.Dochi.FriendInfo>();
-            Dotchi.Models.Dochi.FriendInfo friendItem31 = new Dotchi.Models.Dochi.FriendInfo();
+            List<Dotchi.Models.Dotchi.FriendInfo> FriendList3 = new List<Dotchi.Models.Dotchi.FriendInfo>();
+            Dotchi.Models.Dotchi.FriendInfo friendItem31 = new Dotchi.Models.Dotchi.FriendInfo();
             friendItem31.ID = "323456";
             friendItem31.Name = "Amber Chao";
             friendItem31.Thumbnail = "http://ppt.cc/K4yb";
             FriendList3.Add(friendItem31);
 
-            Dotchi.Models.Dochi.FriendInfo friendItem32 = new Dotchi.Models.Dochi.FriendInfo();
+            Dotchi.Models.Dotchi.FriendInfo friendItem32 = new Dotchi.Models.Dotchi.FriendInfo();
             friendItem32.ID = "323457";
             friendItem32.Name = "Yiying Lin";
             friendItem32.Thumbnail = "http://ppt.cc/efjv";
             FriendList3.Add(friendItem32);
 
-            Dotchi.Models.Dochi.FriendInfo friendItem33 = new Dotchi.Models.Dochi.FriendInfo();
+            Dotchi.Models.Dotchi.FriendInfo friendItem33 = new Dotchi.Models.Dotchi.FriendInfo();
             friendItem33.ID = "323458";
             friendItem33.Name = "Nai-Wen Chi ";
             friendItem33.Thumbnail = "http://ppt.cc/McFs";
             FriendList3.Add(friendItem33);
 
-            Dotchi.Models.Dochi.FriendInfo friendItem34 = new Dotchi.Models.Dochi.FriendInfo();
+            Dotchi.Models.Dotchi.FriendInfo friendItem34 = new Dotchi.Models.Dotchi.FriendInfo();
             friendItem34.ID = "323459";
             friendItem34.Name = "Amy Lu ";
             friendItem34.Thumbnail = "http://ppt.cc/RGen";
@@ -203,27 +203,27 @@ namespace Dotchi.Controllers
 
             shop3.FriendDetail = FriendList;
 
-            List<Dotchi.Models.Dochi.Comment> CommentList3 = new List<Dotchi.Models.Dochi.Comment>();
+            List<Dotchi.Models.Dotchi.Comment> CommentList3 = new List<Dotchi.Models.Dotchi.Comment>();
 
-            Dotchi.Models.Dochi.Comment comment31 = new Dotchi.Models.Dochi.Comment();
+            Dotchi.Models.Dotchi.Comment comment31 = new Dotchi.Models.Dotchi.Comment();
             comment31.ID = "1231345yhte6u6uj7i7i7";
             comment31.Time = DateTime.Now;
             comment31.Image = "http://ppt.cc/nbIC";
             comment31.Text = "好吃到我下巴差點掉下來！！！！";
 
-            Dotchi.Models.Dochi.UserInfo userInfo31 = new Dotchi.Models.Dochi.UserInfo();
+            Dotchi.Models.Dotchi.UserInfo userInfo31 = new Dotchi.Models.Dotchi.UserInfo();
             userInfo31.UserName = "洪小薇";
             userInfo31.UserImage = "http://ppt.cc/rSYV";
             comment31.UserDetail = userInfo31;
             CommentList3.Add(comment31);
 
-            Dotchi.Models.Dochi.Comment comment32 = new Dotchi.Models.Dochi.Comment();
+            Dotchi.Models.Dotchi.Comment comment32 = new Dotchi.Models.Dotchi.Comment();
             comment32.ID = "12232345yhte6u6uj7i7i7";
             comment32.Time = DateTime.Now;
             comment32.Image = "http://ppt.cc/LRsr";
             comment32.Text = "終於開幕了！一份套餐就可品嚐到多國料理，帶老人家來吃好適合呀~";
 
-            Dotchi.Models.Dochi.UserInfo userInfo32 = new Dotchi.Models.Dochi.UserInfo();
+            Dotchi.Models.Dotchi.UserInfo userInfo32 = new Dotchi.Models.Dotchi.UserInfo();
             userInfo32.UserName = "Emily Hsu";
             userInfo32.UserImage = "http://ppt.cc/SxHl";
             comment32.UserDetail = userInfo32;
@@ -237,60 +237,60 @@ namespace Dotchi.Controllers
             return shopList;      
         }
 
-        public List<Dotchi.Models.Dochi.RecommendTag> GetTagList() 
+        public List<Dotchi.Models.Dotchi.RecommendTag> GetTagList() 
         {
-            List<Dotchi.Models.Dochi.RecommendTag> recommendTagList = new List<Dotchi.Models.Dochi.RecommendTag>();
+            List<Dotchi.Models.Dotchi.RecommendTag> recommendTagList = new List<Dotchi.Models.Dotchi.RecommendTag>();
 
             #region fake data - tag
-            Dotchi.Models.Dochi.RecommendTag tag1 = new Dotchi.Models.Dochi.RecommendTag();
+            Dotchi.Models.Dotchi.RecommendTag tag1 = new Dotchi.Models.Dotchi.RecommendTag();
             tag1.ID = 1;
             tag1.Name = "日式料理";
             tag1.Number = 3;
             recommendTagList.Add(tag1);
 
-            Dotchi.Models.Dochi.RecommendTag tag2 = new Dotchi.Models.Dochi.RecommendTag();
+            Dotchi.Models.Dotchi.RecommendTag tag2 = new Dotchi.Models.Dotchi.RecommendTag();
             tag2.ID = 2;
             tag2.Name = "火鍋";
             tag2.Number = 15;
             recommendTagList.Add(tag2);
 
-            Dotchi.Models.Dochi.RecommendTag tag3 = new Dotchi.Models.Dochi.RecommendTag();
+            Dotchi.Models.Dotchi.RecommendTag tag3 = new Dotchi.Models.Dotchi.RecommendTag();
             tag3.ID = 3;
             tag3.Name = "咖啡廳";
             tag3.Number = 43;
             recommendTagList.Add(tag3);
 
-            Dotchi.Models.Dochi.RecommendTag tag4 = new Dotchi.Models.Dochi.RecommendTag();
+            Dotchi.Models.Dotchi.RecommendTag tag4 = new Dotchi.Models.Dotchi.RecommendTag();
             tag4.ID = 4;
             tag4.Name = "家庭聚餐";
             tag4.Number = 21;
             recommendTagList.Add(tag4);
 
-            Dotchi.Models.Dochi.RecommendTag tag5 = new Dotchi.Models.Dochi.RecommendTag();
+            Dotchi.Models.Dotchi.RecommendTag tag5 = new Dotchi.Models.Dotchi.RecommendTag();
             tag5.ID = 5;
             tag5.Name = "24h營業";
             tag5.Number = 18;
             recommendTagList.Add(tag5);
 
-            Dotchi.Models.Dochi.RecommendTag tag6 = new Dotchi.Models.Dochi.RecommendTag();
+            Dotchi.Models.Dotchi.RecommendTag tag6 = new Dotchi.Models.Dotchi.RecommendTag();
             tag6.ID = 6;
             tag6.Name = "宵夜好去處";
             tag6.Number = 45;
             recommendTagList.Add(tag6);
 
-            Dotchi.Models.Dochi.RecommendTag tag7 = new Dotchi.Models.Dochi.RecommendTag();
+            Dotchi.Models.Dotchi.RecommendTag tag7 = new Dotchi.Models.Dotchi.RecommendTag();
             tag7.ID = 7;
             tag7.Name = "輕食";
             tag7.Number = 12;
             recommendTagList.Add(tag7);
 
-            Dotchi.Models.Dochi.RecommendTag tag8 = new Dotchi.Models.Dochi.RecommendTag();
+            Dotchi.Models.Dotchi.RecommendTag tag8 = new Dotchi.Models.Dotchi.RecommendTag();
             tag8.ID = 8;
             tag8.Name = "異國料理";
             tag8.Number = 32;
             recommendTagList.Add(tag8);
 
-            Dotchi.Models.Dochi.RecommendTag tag9 = new Dotchi.Models.Dochi.RecommendTag();
+            Dotchi.Models.Dotchi.RecommendTag tag9 = new Dotchi.Models.Dotchi.RecommendTag();
             tag9.ID = 9;
             tag9.Name = "一個人吃飯";
             tag9.Number = 38;
