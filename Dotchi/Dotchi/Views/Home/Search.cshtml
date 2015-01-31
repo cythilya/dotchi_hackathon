@@ -5,70 +5,69 @@
     List<Dotchi.Models.Dotchi.RecommendTag> RecommendTagList = ViewBag.RecommendTag as List<Dotchi.Models.Dotchi.RecommendTag>;
     Dotchi.Models.Dotchi.MemberInfo MemberDetail = ViewBag.MemberInfo as Dotchi.Models.Dotchi.MemberInfo;
 }
-<div id="pageSearchResult">
-    <div class="header">
-        <div class="inputArea">
-			<input type="text" value="@(ViewBag.QueryString)" class="queryInput" placeholder="請輸入地區" />
-			<a href="#" class="button search"><span>尋找餐廳</span></a>
-		</div>	
-		<div class="fbArea">
-            @* 登入前 *@
-			<a href="#" class="button fb"><span>FB登入</span></a>
-			@* 登入後 *@
-            <div class="user"><img src="@(MemberDetail.Image)" title="@(MemberDetail.Name)" alt="@(MemberDetail.Name)" /></div>
-            <div class="userName">歡迎 <span>@(MemberDetail.Name)</span></div> 
-		</div>
-    </div>
+<div id="page" class="dotch">
     <div class="main">
-        <div class="tagArea">
-            <ul class="tagLst">
-                @foreach(var tagItem in RecommendTagList)
+        <div class="header">
+            <h1>吃什麼，どっち</h1>
+            <div class="inputArea">
+			    <input type="text" value="@(ViewBag.QueryString)" class="queryInput" placeholder="請輸入地區" />
+			    <a href="#" class="button search"><span>尋找餐廳</span></a>
+		    </div>	
+		    <div class="fbArea">
+                @if(MemberDetail == null)
                 {
-                    <li>
-                        <a class="tagLink" href="/Home/Search?q=@(tagItem.Name)">
-                            <span class="tagName">@(tagItem.Name)</span>
-                            <span class="shopNumer">@(tagItem.Number)</span>
-                        </a>
-                    </li>
+                    @* 登入前 *@
+                    <a href="#" class="button fb"><span>FB登入</span></a>
                 }
-            </ul>
-        </div>
-        @foreach (var shopItem in ShopList) 
-        { 
-        <div class="shopInfo">
-            <div class="thumnail">
-                <img src="@(shopItem.Cover)" title="@(shopItem.Name)" alt="@(shopItem.Name)" />
-            </div>
-            <div class="detail">
-                <div class="name">@(shopItem.Name)</div>
-                <div class="rating" data-rating="@(shopItem.Rating)">@(shopItem.Rating)</div>
-                <div class="checkin">@(shopItem.Checkin)</div>
-                <div class="friendList">
-                    @foreach(var friendItem in shopItem.FriendDetail)
-                    {   
-                    <div class="friendItem">
-                        <img src="@(friendItem.Thumbnail)" title="@(friendItem.Name)" alt="@(friendItem.Name)" />
-                    </div>
-                    }
-                </div>
-            </div>
-            <div class="commentList">
-                @foreach (var commentItem in shopItem.CommentList)
-                { 
-                <div class="commentItem">
-                    <div class="userInfo">
-                        <div class="userImage"><img src="@(commentItem.UserDetail.UserImage)" title="@(commentItem.UserDetail.UserName)" alt="@(commentItem.UserDetail.UserName)" /></div>
-                        <div class="userName">@(commentItem.UserDetail.UserName)</div>
-                        <div class="postTime">@(commentItem.Time)</div>
-                    </div>
-                    <div class="text">@(commentItem.Text)</div>
-                    <div class="image">
-                        <img src="@(commentItem.Image)" title="@(commentItem.UserDetail.UserName) at @(shopItem.Name)" alt="@(commentItem.UserDetail.UserName) at @(shopItem.Name)">
-                    </div>
-                </div>                
+                else
+                {
+                    @* 登入後 *@
+                    <div class="user"><img src="@(MemberDetail.Image)" title="@(MemberDetail.Name)" alt="@(MemberDetail.Name)" /></div>
+                    <div class="userName">歡迎 <span>@(MemberDetail.Name)</span></div>                     
                 }
-            </div>
+		    </div>
         </div>
-        }
+	    <div class="content">
+		    <div class="left">
+                @foreach(var shopItem in ShopList)
+                {
+			    <div class="card">
+				    <div class="ba">
+					    <div class="img">
+						    <img src="@(shopItem.Cover)" title="@(shopItem.Name)" alt="@(shopItem.Name)">
+					    </div>
+					    <div class="show">
+						    <h2>@(shopItem.Name)</h2>
+						    <ul>
+							    <li class="star"><span>dotch指數</span><div class="rating" data-rating="@(shopItem.Rating)">@(shopItem.Rating)</div></li>
+							    <li class="num"><span>打卡人數</span> <span>@(shopItem.Checkin)</span></li>
+							    <li class="friend">
+								    <span>看看朋友誰來吃？</span>
+								    @if(MemberDetail == null)
+                                    {
+                                    <a href="#" class="friendBtn">FB Login</a>
+                                    }
+							    </li>
+						    </ul>
+					    </div>
+				    </div>
+				    <a href="#" class="more">more</a>
+			    </div>
+                }
+		    </div>
+		    <div class="right">
+			    <ul class="tagLst">
+		            @foreach(var tagItem in RecommendTagList)
+		            {
+	                <li>
+	                    <a href="/Home/Search?q=@(tagItem.Name)">
+	                        <span class="tagName">@(tagItem.Name)</span>
+	                        <span class="shopNumer">( @(tagItem.Number) )</span>
+	                    </a>
+	                </li>
+		            }
+        	    </ul>
+		    </div>
+	    </div>
     </div>
 </div>

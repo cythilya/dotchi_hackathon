@@ -2,3 +2,8 @@ C:\Users\eileen.wu.CORP\Dotchi\Dotchi\ServerControl1\bin\Debug\ServerControl1.dl
 C:\Users\eileen.wu.CORP\Dotchi\Dotchi\ServerControl1\bin\Debug\ServerControl1.pdb
 C:\Users\eileen.wu.CORP\Dotchi\Dotchi\ServerControl1\obj\Debug\ServerControl1.dll
 C:\Users\eileen.wu.CORP\Dotchi\Dotchi\ServerControl1\obj\Debug\ServerControl1.pdb
+D:\Dotchi\Dotchi\ServerControl1\bin\Debug\ServerControl1.dll
+D:\Dotchi\Dotchi\ServerControl1\bin\Debug\ServerControl1.pdb
+D:\Dotchi\Dotchi\ServerControl1\obj\Debug\ResolveAssemblyReference.cache
+D:\Dotchi\Dotchi\ServerControl1\obj\Debug\ServerControl1.dll
+D:\Dotchi\Dotchi\ServerControl1\obj\Debug\ServerControl1.pdb
