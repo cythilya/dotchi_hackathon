@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Dotchi.Models.Dochi.ShopInfo> shopLis = ViewBag.ShopLis as List<Dotchi.Models.Dochi.ShopInfo>;
+}
+<div class="header">
+    <div class="searchbar">
+        <div class="searchbox">@(ViewBag.QueryString)</div>
+        <a class="searchbutton" href="#">找餐廳</a>
+    </div>
+    <a class="fbLogin"></a>
+</div>
+<div class="main">
+    @foreach (var shopItem in shopLis) 
+    { 
+    <div class="shopInfo">
+        <div class="thumnail">
+            <img src="@(shopItem.Cover)" title="@(shopItem.Name)" alt="@(shopItem.Name)" />
+        </div>
+        <div class="detail">
+            <div class="name">@(shopItem.Name)</div>
+            <div class="rating" data-rating="@(shopItem.Rating)">@(shopItem.Rating)</div>
+            <div class="checkin">@(shopItem.Checkin)</div>
+            <div class="friendList">
+                @foreach(var friendItem in shopItem.FriendDetail)
+                {   
+                <div class="friendItem">
+                    <img src="@(friendItem.Thumbnail)" title="@(friendItem.Name)" alt="@(friendItem.Name)" />
+                </div>
+                }
+            </div>
+        </div>
+        <div class="commentList">
+            @foreach (var commentItem in shopItem.CommentList)
+            { 
+            <div class="commentItem">
+                <div class="userInfo">
+                    <div class="userImage"><img src="@(commentItem.UserDetail.UserImage)" title="@(commentItem.UserDetail.UserName)" alt="@(commentItem.UserDetail.UserName)" /></div>
+                    <div class="userName">@(commentItem.UserDetail.UserName)</div>
+                    <div class="postTime">@(commentItem.Time)</div>
+                </div>
+                <div class="text">@(commentItem.Text)</div>
+                <div class="image">
+                    <img src="@(commentItem.Image)" title="@(commentItem.UserDetail.UserName) at @(shopItem.Name)" alt="@(commentItem.UserDetail.UserName) at @(shopItem.Name)">
+                </div>
+            </div>                
+            }
+        </div>
+    </div>
+    }
+</div>
