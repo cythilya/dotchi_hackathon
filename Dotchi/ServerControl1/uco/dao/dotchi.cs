@@ -15,10 +15,13 @@ namespace util.uco.dao
         internal static bool SaveMember(MemberInfo memberinfo)
         {
             string sql = @"
+if (select count(1) from member where ID = @id) = 0
+begin
 insert into member
 (ID, Name, Image)
 values
 (@id, @Name, @Image)
+end
 ";
             Sql u = new Sql();
             using (SqlCommand cmd = new SqlCommand(sql))
@@ -27,6 +30,18 @@ values
                 cmd.Parameters.AddWithValue("@Name", memberinfo.Name);
                 cmd.Parameters.AddWithValue("@Image", memberinfo.Image);
                 return u.ExecSQL(cmd) == 1;
+            }
+        }
+
+        //取會員資料
+        internal static MemberInfo QueryMember(string ID)
+        {
+            string sql = @"
+select * from member where ID = @id
+";			Sql u = new Sql();
+            using (SqlCommand cmd = new SqlCommand(sql))
+            {
+                return List.DataTableToObj<MemberInfo>(u.GetDataTable(cmd));
             }
         }
 

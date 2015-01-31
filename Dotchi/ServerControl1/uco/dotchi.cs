@@ -15,5 +15,12 @@ namespace util.uco
         {
             return dao.dotchi.SaveMember(memberinfo);
         }
+        /// <summary>
+        /// 取得會員資訊
+        /// </summary>
+        public MemberInfo QueryMember(string ID)
+        {
+            return dao.dotchi.QueryMember(ID);
+        }
     }
 }

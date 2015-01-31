@@ -463,6 +463,12 @@
     <None Include="Content\dotchi\wireframe\resources\chrome\axure-chrome-extension.crx" />
     <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServerControl1\util.csproj">
+      <Project>{1524E56E-BDF8-4999-B433-20EA64B2E9F3}</Project>
+      <Name>util</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

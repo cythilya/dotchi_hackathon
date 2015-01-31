@@ -20,8 +20,24 @@ namespace util.uco.model.dotchi
         /// </summary>
         public string Image { get; set; }
         /// <summary>
-        /// 選擇的選項代號
+        /// 朋友清單
         /// </summary>
-        //public List<string> OptionID { get; set; }
+        public List<FriendInfo> FriendDetail { get; set; }
+    }
+
+    public class FriendInfo
+    {
+        /// <summary>
+        /// ID
+        /// </summary>
+        public string ID { get; set; }
+        /// <summary>
+        /// Name
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
+        /// Thumbnail
+        /// </summary>
+        public string Thumbnail { get; set; }
     }
 }
