@@ -88,11 +88,47 @@ SP.module = {
 								});								
 							}
 						});
-						//top.location.href = '/Home/Search';
+						top.location.href = '/Home/Search';
 					}
 					else {
 						FB.login(function (response) {
-							//top.location.href = '/Home/Search';
+							FB.api('/me', function (res) {
+								if (!res || res.error) {
+									//取不到資料，報錯
+									alert('系統有誤，請重新再試一次。');
+								}
+								else {
+									var ID = res.id;
+									var Name = res.first_name + res.last_name;
+									var UserImage = 'http://graph.facebook.com/'+ ID + '/picture?width=40&height=40';
+
+									//save cookie
+									document.cookie = 'FBUID=' + ID + '; path=/';
+
+									$.ajax({
+										url: '/Home/SaveMemberInfo',
+										type: 'post',
+										data: {
+											"MemberID": ID,
+											"MemberName": Name,
+											"MemberImage": UserImage,
+										},
+										dataType: 'json',
+										error: function (xhr) {
+											alert('請稍後再試一次。');
+										},
+										success: function (response) {
+											if (response.IsSuccess) {
+												top.location.href = '/Home/Search';
+											}
+											else {
+												alert('請稍後再試一次。');
+											}
+										}
+									});								
+								}
+							});						
+							top.location.href = '/Home/Search';
 						});
 					}
 				});		
