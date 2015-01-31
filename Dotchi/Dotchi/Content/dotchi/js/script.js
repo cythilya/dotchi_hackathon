@@ -19,24 +19,13 @@ SP.module = {
     inherit: function(Child, Parent){
         Child.prototype = new Parent();
     },
-    moduleA: function(dModule){
-        var dDIV = $(dModule).find('div').each(function(index,item){
-        //var dDIV = $('.moduleA div').each(function(index,item){
-            //$(item).html(index+1);
-            switch(index+1){
-                case 1:
-                    $(item).html('a');
-                    break;
-                case 2:
-                    $(item).html('b');
-                    break;
-                case 3:
-                    $(item).html('c');
-                    break;
-                default:
-                    break;
-            }
-        });
+    pageIndex: function(dModule){
+		var dModule = $(dModule);
+    },	
+    pageSearchResult: function(dModule){
+		var dModule = $(dModule);
+
+
     }
 };
 (function(){
@@ -46,5 +35,6 @@ SP.module = {
             objFunction(dTarget);
         }                
     };
-    doWhileExist('moduleA',SP.module.moduleA);
+    doWhileExist('pageIndex',SP.module.pageIndex);
+    doWhileExist('pageSearchResult',SP.module.pageSearchResult);
 })();
