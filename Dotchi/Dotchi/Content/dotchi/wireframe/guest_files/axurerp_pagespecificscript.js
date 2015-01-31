@@ -55,7 +55,7 @@ $axure.eventManager.click('u142', function(e) {
 
 if (true) {
 
-	self.location.href=$axure.globalVariableProvider.getLinkUrl('guest_-_展開.html');
+	self.location.href=$axure.globalVariableProvider.getLinkUrl('guest___opne.html');
 
 }
 });
@@ -66,7 +66,7 @@ $axure.eventManager.click('u139', function(e) {
 
 if (true) {
 
-	self.location.href=$axure.globalVariableProvider.getLinkUrl('guest_-_展開.html');
+	self.location.href=$axure.globalVariableProvider.getLinkUrl('guest___opne.html');
 
 }
 });
@@ -88,7 +88,7 @@ $axure.eventManager.click('u136', function(e) {
 
 if (true) {
 
-	self.location.href=$axure.globalVariableProvider.getLinkUrl('guest_-_展開.html');
+	self.location.href=$axure.globalVariableProvider.getLinkUrl('guest___opne.html');
 
 }
 });
@@ -99,7 +99,7 @@ $axure.eventManager.click('u145', function(e) {
 
 if (true) {
 
-	self.location.href=$axure.globalVariableProvider.getLinkUrl('guest_-_展開.html');
+	self.location.href=$axure.globalVariableProvider.getLinkUrl('guest___opne.html');
 
 }
 });
@@ -110,7 +110,7 @@ $axure.eventManager.click('u148', function(e) {
 
 if (true) {
 
-	self.location.href=$axure.globalVariableProvider.getLinkUrl('guest_-_展開.html');
+	self.location.href=$axure.globalVariableProvider.getLinkUrl('guest___opne.html');
 
 }
 });
