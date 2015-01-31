@@ -54,7 +54,7 @@ namespace Dotchi.Models
 
         public class MemberInfo 
         {
-            public int ID { get; set; }
+            public string ID { get; set; }
             public string Name { get; set; }
             public string Image { get; set; }
             public List<FriendInfo> FriendDetail{ get; set; }

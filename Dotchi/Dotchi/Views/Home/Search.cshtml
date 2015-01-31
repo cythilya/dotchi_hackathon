@@ -3,6 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     List<Dotchi.Models.Dotchi.ShopInfo> ShopList = ViewBag.ShopList as List<Dotchi.Models.Dotchi.ShopInfo>;
     List<Dotchi.Models.Dotchi.RecommendTag> RecommendTagList = ViewBag.RecommendTag as List<Dotchi.Models.Dotchi.RecommendTag>;
+    Dotchi.Models.Dotchi.MemberInfo MemberDetail = ViewBag.MemberInfo as Dotchi.Models.Dotchi.MemberInfo;
 }
 <div id="pageSearchResult">
     <div class="header">
@@ -11,8 +12,11 @@
 			<a href="#" class="button search"><span>尋找餐廳</span></a>
 		</div>	
 		<div class="fbArea">
+            @* 登入前 *@
 			<a href="#" class="button fb"><span>FB登入</span></a>
-			<div class="user"><img alt="" src="https://graph.facebook.com/100000133231966/picture?type=large"></div>
+			@* 登入後 *@
+            <div class="user"><img src="@(MemberDetail.Image)" title="@(MemberDetail.Name)" alt="@(MemberDetail.Name)" /></div>
+            <div class="userName">歡迎 <span>@(MemberDetail.Name)</span></div> 
 		</div>
     </div>
     <div class="main">

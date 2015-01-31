@@ -24,7 +24,7 @@ SP.module = {
 		var dSearchBtn = dModule.find('.search.button');
 		var dFBLoginBtn = dModule.find('.fb.button');
 		var dQueryInput = dModule.find('.query');
-		
+
 		//remove cookie
 		$.removeCookie('FBUID');		
 		$.removeCookie('Name');		
@@ -47,36 +47,41 @@ SP.module = {
 		//facebook login
 		dFBLoginBtn.click(function(e){
 			e.preventDefault();
-			
-            var dThisLoginBtn = $(this);
-			FB.getLoginStatus(function (response) {
-				if (response.status === 'connected') {
-				
-					FB.api('/me', function (response) {
-						if (!response || response.error) {
-							//取不到資料，報錯
-							alert('系統有誤，請重新再試一次。');
-						}
-						else {
-							ID = response.id;
-							Name = response.first_name + response.last_name
-							UserImage = 
-							birthday = response.birthday;
 
-							document.cookie = 'FBUID=' + ID + '; path=/';
-							if (response.name) {
-								name = response.name;
+            var dThisLoginBtn = $(this);
+			FBUtil.after(function (FB) {
+				FB.getLoginStatus(function (response) {
+					if (response.status === 'connected') {
+						FB.api('/me', function (res) {
+							if (!res || res.error) {
+								//取不到資料，報錯
+								alert('系統有誤，請重新再試一次。');
 							}
-						}
-					}			
-					//top.location.href = '/Home/Search';
-				}
-				else {
-					FB.login(function (response) {
+							else {
+								var ID = res.id;
+								var Name = res.first_name + res.last_name;
+								var UserImage = 'http://graph.facebook.com/'+ ID + '/picture?width=40&height=40';
+
+								//save cookie
+								document.cookie = 'FBUID=' + ID + '; path=/';
+								document.cookie = 'Name=' + Name + '; path=/';
+								document.cookie = 'UserImage=' + UserImage + '; path=/';
+								
+								console.log(document.cookie);
+								if (res.name) {
+									Name = res.name;
+								}
+							}
+						});
 						//top.location.href = '/Home/Search';
-					});
-				}
-			});
+					}
+					else {
+						FB.login(function (response) {
+							//top.location.href = '/Home/Search';
+						});
+					}
+				});		
+			});			
 		});	
     },	
     pageSearchResult: function(dModule){
@@ -112,9 +117,7 @@ SP.module = {
 				}
 			});
 		});			
-		
-
-    }
+	}
 };
 (function(){
     var doWhileExist = function(ModuleID,objFunction){
