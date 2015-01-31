@@ -1,7 +1,8 @@
 ﻿@{
     ViewBag.Title = "Search";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<Dotchi.Models.Dochi.ShopInfo> shopLis = ViewBag.ShopLis as List<Dotchi.Models.Dochi.ShopInfo>;
+    List<Dotchi.Models.Dochi.ShopInfo> ShopList = ViewBag.ShopList as List<Dotchi.Models.Dochi.ShopInfo>;
+    List<Dotchi.Models.Dochi.RecommendTag> RecommendTagList = ViewBag.RecommendTag as List<Dotchi.Models.Dochi.RecommendTag>;
 }
 <div class="header">
     <div class="searchbar">
@@ -11,7 +12,7 @@
     <a class="fbLogin"></a>
 </div>
 <div class="main">
-    @foreach (var shopItem in shopLis) 
+    @foreach (var shopItem in ShopList) 
     { 
     <div class="shopInfo">
         <div class="thumnail">
@@ -48,4 +49,17 @@
         </div>
     </div>
     }
+    <div class="tagArea">
+        <ul class="tagLst">
+            @foreach(var tagItem in RecommendTagList)
+            {
+                <li>
+                    <a class="tagLink" href="/Home/Search?q=@(tagItem.Name)">
+                        <span class="tagName">@(tagItem.Name)</span>
+                        <span class="shopNumer">@(tagItem.Number)</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
 </div>
