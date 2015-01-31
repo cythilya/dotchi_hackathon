@@ -19,9 +19,16 @@ namespace Dotchi.Controllers
 
         public ActionResult Search(string q = "")
         {
+            string memberID = "";
+            HttpCookie myCookie = new HttpCookie("FBUID");
+            myCookie = Request.Cookies["FBUID"];
+
+            if (myCookie != null) {
+                memberID = myCookie.Value;
+            }
             GetShopList();
             GetTagList();
-            GetMemberInfo();
+            GetMemberInfo(memberID);
             ViewBag.QueryString = q;
             return View();
         }
@@ -37,13 +44,20 @@ namespace Dotchi.Controllers
 
             bool result = uco.SaveMember(memberInfo);
 
-            var jsonObject = new { IsSuccess = true, ErrorMessage = "", ReturnData = "" };
+            var jsonObject = new { IsSuccess = result, ErrorMessage = "", ReturnData = "" };
             return Json(jsonObject); 
         }
-        public void GetMemberInfo() 
+        public void GetMemberInfo(string MemberID) 
         {
-            Dotchi.Models.Dotchi.MemberInfo memberInfo = new Dotchi.Models.Dotchi.MemberInfo();
-            ViewBag.MemberInfo = memberInfo;
+            util.uco.model.dotchi.MemberInfo memberInfo = new util.uco.model.dotchi.MemberInfo();
+            memberInfo = uco.QueryMember(MemberID);
+
+            Dotchi.Models.Dotchi.MemberInfo memberDetail = new Dotchi.Models.Dotchi.MemberInfo();
+            memberDetail.ID = memberInfo.ID;
+            memberDetail.Name = memberInfo.Name;
+            memberDetail.Image = memberInfo.Name;
+
+            ViewBag.MemberInfo = memberDetail;
         }
         public List<Dotchi.Models.Dotchi.ShopInfo> GetShopList()
         {
