@@ -171,6 +171,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\dotchi\skin\btn_login_l.png" />
+    <Content Include="Content\dotchi\skin\btn_login_m.png" />
+    <Content Include="Content\dotchi\skin\btn_login_s.png" />
     <Content Include="Content\dotchi\wireframe\backup.html" />
     <Content Include="Content\dotchi\wireframe\backup_files\axurerp_pagespecificscript.js" />
     <Content Include="Content\dotchi\wireframe\backup_files\axurerp_pagespecificstyles.css" />
