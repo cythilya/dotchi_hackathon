@@ -136,3 +136,5 @@ C:\Users\eileen.wu.CORP\Dotchi\Dotchi\Dotchi\bin\zh-Hant\WebMatrix.WebData.resou
 C:\Users\eileen.wu.CORP\Dotchi\Dotchi\Dotchi\obj\Debug\Dotchi.csprojResolveAssemblyReference.cache
 C:\Users\eileen.wu.CORP\Dotchi\Dotchi\Dotchi\obj\Debug\Dotchi.dll
 C:\Users\eileen.wu.CORP\Dotchi\Dotchi\Dotchi\obj\Debug\Dotchi.pdb
+D:\Dotchi\Dotchi\Dotchi\bin\ServerControl1.dll
+D:\Dotchi\Dotchi\Dotchi\bin\ServerControl1.pdb

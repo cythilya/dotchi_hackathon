@@ -62,15 +62,40 @@ SP.module = {
 								var Name = res.first_name + res.last_name;
 								var UserImage = 'http://graph.facebook.com/'+ ID + '/picture?width=40&height=40';
 
+								$.ajax({
+									url: '/Home/SaveMemberInfo',
+									type: 'post',
+									data: {
+										"MemberID": ID,
+										"MemberName": Name,
+										"MemberImage": UserImage,
+									},
+									dataType: 'json',
+									error: function (xhr) {
+										alert('請稍後再試一次。');
+									},
+									success: function (response) {
+										if (response.IsSuccess) {
+											top.location.href = '/Home/Search';
+										}
+										else {
+											alert('請稍後再試一次。');
+										}
+									},
+									complete: function () {
+										//delete cookie
+										//document.cookie = name+"=;expires="+(new Date(0)).toGMTString();
+									}
+								});								
 								//save cookie
-								document.cookie = 'FBUID=' + ID + '; path=/';
-								document.cookie = 'Name=' + Name + '; path=/';
-								document.cookie = 'UserImage=' + UserImage + '; path=/';
+								//document.cookie = 'FBUID=' + ID + '; path=/';
+								//document.cookie = 'Name=' + Name + '; path=/';
+								//document.cookie = 'UserImage=' + UserImage + '; path=/';
 								
-								console.log(document.cookie);
-								if (res.name) {
-									Name = res.name;
-								}
+								//console.log(document.cookie);
+								//if (res.name) {
+								//	Name = res.name;
+								//}
 							}
 						});
 						//top.location.href = '/Home/Search';
@@ -84,7 +109,7 @@ SP.module = {
 			});			
 		});	
     },	
-    pageSearchResult: function(dModule){
+    page: function(dModule){
 		var dModule = $(dModule);
 		var dQueryInput = dModule.find('.queryInput');
 		var dSearchBtn = dModule.find('.search.button');
@@ -127,5 +152,5 @@ SP.module = {
         }                
     };
     doWhileExist('index',SP.module.index);
-    doWhileExist('pageSearchResult',SP.module.pageSearchResult);
+    doWhileExist('page',SP.module.page);
 })();

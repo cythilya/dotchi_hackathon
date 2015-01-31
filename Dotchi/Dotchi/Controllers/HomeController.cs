@@ -9,7 +9,8 @@ namespace Dotchi.Controllers
 {
     public class HomeController : Controller
     {
-        
+        util.uco.dotchi uco = new util.uco.dotchi();
+
         #region view
         public ActionResult Index()
         {
@@ -29,47 +30,19 @@ namespace Dotchi.Controllers
         #region function
         public JsonResult SaveMemberInfo(string MemberID, string MemberName, string MemberImage) 
         {
-            var jsonObject = new { IsSuccess = false, ErrorMessage = "", ReturnData = "" };
+            util.uco.model.dotchi.MemberInfo memberInfo = new util.uco.model.dotchi.MemberInfo();
+            memberInfo.ID = MemberID;
+            memberInfo.Name = MemberName;
+            memberInfo.Image = MemberImage;
+
+            bool result = uco.SaveMember(memberInfo);
+
+            var jsonObject = new { IsSuccess = true, ErrorMessage = "", ReturnData = "" };
             return Json(jsonObject); 
         }
         public void GetMemberInfo() 
         {
             Dotchi.Models.Dotchi.MemberInfo memberInfo = new Dotchi.Models.Dotchi.MemberInfo();
-
-            //get fbuid
-            string memberID = "";
-            HttpCookie FBUIDinCookie = new HttpCookie("FBUID");
-            FBUIDinCookie = Request.Cookies["FBUID"];
-
-            if (FBUIDinCookie != null)
-            {
-                memberID = FBUIDinCookie.Value;
-            }
-
-            //get memner name
-            string memberName = "";
-            HttpCookie NameinCookie = new HttpCookie("Name");
-            NameinCookie = Request.Cookies["Name"];
-
-            if (NameinCookie != null)
-            {
-                memberName = NameinCookie.Value;
-            }
-
-            //get member image
-            string memberImage = "";
-            HttpCookie ImageinCookie = new HttpCookie("UserImage");
-            ImageinCookie = Request.Cookies["UserImage"];
-
-            if (ImageinCookie != null)
-            {
-                memberImage = ImageinCookie.Value;
-            }
-
-            memberInfo.ID = memberID;
-            memberInfo.Name = memberName;
-            memberInfo.Image = memberImage;
-
             ViewBag.MemberInfo = memberInfo;
         }
         public List<Dotchi.Models.Dotchi.ShopInfo> GetShopList()
@@ -151,7 +124,7 @@ namespace Dotchi.Controllers
             shop2.Name = "禾鶴亭日本料理餐廳";
             shop2.Rating = 4;
             shop2.Checkin = 1349;
-            shop2.Cover = "http://ppt.cc/yPSU";
+            shop2.Cover = "http://pic.pimg.tw/spark0416/1357310739-3160826581_m.jpg?v=1357310741";
             shop2.Address = "台北市松江路108巷3號";
             shop2.Phone = "(02)2568 - 1519";
             shop2.OpenTime = "周一至週六 11:00 ~ 22:00 ";
