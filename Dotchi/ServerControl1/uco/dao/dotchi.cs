@@ -41,6 +41,7 @@ select * from member where ID = @id
 ";			Sql u = new Sql();
             using (SqlCommand cmd = new SqlCommand(sql))
             {
+                cmd.Parameters.AddWithValue("@id", ID);
                 return List.DataTableToObj<MemberInfo>(u.GetDataTable(cmd));
             }
         }
