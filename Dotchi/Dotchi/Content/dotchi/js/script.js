@@ -25,6 +25,12 @@ SP.module = {
 		var dFBLoginBtn = dModule.find('.fb.button');
 		var dQueryInput = dModule.find('.query');
 		
+		//remove cookie
+		$.removeCookie('FBUID');		
+		$.removeCookie('Name');		
+		$.removeCookie('UserImage');		
+		
+		//search something
 		dSearchBtn.click(function(e){
 			e.preventDefault();
 			
@@ -38,17 +44,36 @@ SP.module = {
 			}
 		});
 		
+		//facebook login
 		dFBLoginBtn.click(function(e){
 			e.preventDefault();
 			
             var dThisLoginBtn = $(this);
 			FB.getLoginStatus(function (response) {
 				if (response.status === 'connected') {
-					top.location.href = '/Home/Search';
+				
+					FB.api('/me', function (response) {
+						if (!response || response.error) {
+							//取不到資料，報錯
+							alert('系統有誤，請重新再試一次。');
+						}
+						else {
+							ID = response.id;
+							Name = response.first_name + response.last_name
+							UserImage = 
+							birthday = response.birthday;
+
+							document.cookie = 'FBUID=' + ID + '; path=/';
+							if (response.name) {
+								name = response.name;
+							}
+						}
+					}			
+					//top.location.href = '/Home/Search';
 				}
 				else {
 					FB.login(function (response) {
-						top.location.href = '/Home/Search';
+						//top.location.href = '/Home/Search';
 					});
 				}
 			});
