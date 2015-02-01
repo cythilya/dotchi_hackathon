@@ -44,7 +44,7 @@ namespace Dotchi.Controllers
 
             bool result = uco.SaveMember(memberInfo);
 
-            var jsonObject = new { IsSuccess = true, ErrorMessage = "", ReturnData = "" };
+            var jsonObject = new { IsSuccess = true, ErrorMessage = "", ReturnData = "" };//current value: true
             return Json(jsonObject); 
         }
         
