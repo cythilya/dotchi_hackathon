@@ -2,7 +2,6 @@ body ,html {
     height: 100%;
     font-family: '微軟正黑體';
 	font-size: 13px;
-	background:url(../img/bg.jpg) repeat;
 }
 
 .dotch{
@@ -33,7 +32,6 @@ body ,html {
 				text-indent: -9999px;
 				text-align: center;
 				margin: 40px auto;
-				background-size: 100%;
 			}
 			h2{
 				font-size: 30px;
@@ -82,6 +80,7 @@ body ,html {
 					height: 29px;
 					top: 12px;
 					left: 12px;
+					background-size:50%;
 				}
 				span{
 					font-size: 24px;
@@ -116,13 +115,6 @@ body ,html {
 			.button:active{
 				transform: translate(0px,5px);
 				border-bottom: 1px solid;
-			}
-			img{
-				width: 600px;
-				height: auto;
-				display: block;
-				margin: 50px auto;
-		        background-size: 50%;
 			}
 		}
 	}
@@ -217,6 +209,7 @@ body ,html {
 				background-color: #d15d36;
 				border-bottom: 3px solid #a74a2b;
 				text-shadow: 0px -2px #a74a2b;
+				background-size:50%;
 				&:after{
 					content:"";
 					background:url(../img/index_search.png) no-repeat;
@@ -276,7 +269,7 @@ body ,html {
 						position: relative;
 						margin-bottom: 100px;
 						.ba{
-							background: #F5F5F5;
+							background: #fff9ed;
 							border-radius: 5px;
 							padding: 15px 25px;
 							box-shadow:0 2px 5px rgba(0,0,0,.4);
@@ -287,7 +280,7 @@ body ,html {
 							display: block;
 							position: absolute;
 							// background:url(../img/more_btn.png) no-repeat;
-							background: #EFAA94;
+							background: #D15D36;
 							width: 500px;
 							height: 10px;
 							padding: 50px 0 10px;
@@ -304,7 +297,6 @@ body ,html {
 							&:hover{
 								bottom: -45px;
 								transform: translate(0px,5px);
-								background: #E48769;
 							}
 						}
 						.img{
@@ -330,6 +322,9 @@ body ,html {
 								color: #d15d36;
 								font-weight: bold;
 								padding: 8px 0;
+								a{
+									color:#d15d36;
+								}
 							}
 							ul{
 								li{
@@ -475,25 +470,11 @@ body ,html {
 									color: #888;
 									li{
 										margin: 5px 0;
-										em{
-											display: inline-block;
-											width: 65px;
-											vertical-align: top;
-										}
 										span{
-											margin-left: 10px;
-											width: 270px;
-											display: inline-block;
-											vertical-align: top;
-											font-size: 13px;
+											margin-left: 5px;
 										}
 										a{
 											color: #d15d36;
-											margin-left: 10px;
-											width: 270px;
-											display: inline-block;
-											vertical-align: top;
-											font-size: 13px;
 											&:hover{
 												color: #888;
 											}
@@ -545,7 +526,7 @@ body ,html {
 										border-radius: 5px;
 										padding: 15px;
 										position:relative;
-										background:#fff;
+										background:#fdfbf7;
 										&:before{
 											top:-18px; /* value = - border-top-width - border-bottom-width */
 											bottom:auto;
@@ -575,9 +556,8 @@ body ,html {
 											border-width:0 15px 15px;
 										}
 										.text{
-											color: #000;
+											color: #888;
 											padding: 10px 0;
-											font-size: 15px;
 										}
 										.image{
 											max-width: 100%;
