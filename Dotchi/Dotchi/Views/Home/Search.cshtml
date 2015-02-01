@@ -43,9 +43,20 @@
 							    <li class="num"><span>打卡人數</span> <span>@(shopItem.Checkin)</span></li>
 							    <li class="friend">
 								    <span>看看朋友誰來吃？</span>
-								    @if(MemberDetail.ID == null)
+								    @if (MemberDetail.ID == null)
                                     {
                                     <a href="#" class="friendBtn">FB Login</a>
+                                    }
+                                    else 
+                                    {
+									<div class="friendList">
+						                @foreach(var friendItem in shopItem.FriendDetail)
+						                {
+						                <div class="friendItem">
+						                	<img src="@(friendItem.Thumbnail)" title="@(friendItem.Name)" alt="@(friendItem.Name)">
+						                </div>
+						                }
+						            </div>                 
                                     }
 							    </li>
 						    </ul>
