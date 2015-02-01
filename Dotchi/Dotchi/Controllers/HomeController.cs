@@ -77,7 +77,7 @@ namespace Dotchi.Controllers
             shop1.Phone = "(02)2568 - 1519";
             shop1.OpenTime = "11:00 ~ 22:00 ";
             shop1.Price = "300~1000";
-            shop1.Website = "https://www.facebook.com/kurasushi.songjiangnanjing";
+            shop1.Website = "http://goo.gl/sUtZ66";
 
             List<Dotchi.Models.Dotchi.FriendInfo> FriendList = new List<Dotchi.Models.Dotchi.FriendInfo>();
             Dotchi.Models.Dotchi.FriendInfo friendItem1 = new Dotchi.Models.Dotchi.FriendInfo();
