@@ -179,6 +179,7 @@
     <Content Include="Content\common\js\jquery.cookie.js" />
     <Content Include="Content\common\js\jquery.fd.rating.js" />
     <Content Include="Content\dotchi\css\basic.css" />
+    <Content Include="Content\dotchi\img\cover.png" />
     <Content Include="Content\dotchi\img\icon_start.png" />
     <Content Include="Content\dotchi\css\style.css" />
     <Content Include="Content\dotchi\img\after.png" />
