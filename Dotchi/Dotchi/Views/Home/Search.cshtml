@@ -8,7 +8,7 @@
 <div id="page" class="dotch">
     <div class="main">
         <div class="header">
-            <h1>吃什麼，どっち</h1>
+            <h1><a href="#">吃什麼，どっち</a></h1>
             <div class="inputArea">
 			    <input type="text" value="@(ViewBag.QueryString)" class="queryInput" placeholder="請輸入地區" />
 			    <a href="#" class="button search"><span>尋找餐廳</span></a>
@@ -39,7 +39,13 @@
 					    <div class="show">
 						    <h2>@(shopItem.Name)</h2>
 						    <ul>
-							    <li class="star"><span>dotch指數</span><div class="rating" data-rating="@(shopItem.Rating)">@(shopItem.Rating)</div></li>
+							    <li class="star">
+                                    <span>dotch指數</span>
+                                    
+                                    @*<div class="rating" data-rating="@(shopItem.Rating)">@(shopItem.Rating)</div>*@
+                                    <div class="rating-bar" data-mod="on" data-rating="@(shopItem.Rating)"></div>
+
+                                </li>
 							    <li class="num"><span>打卡人數</span> <span>@(shopItem.Checkin)</span></li>
 							    <li class="friend">
 								    <span>看看朋友誰來吃？</span>
@@ -97,7 +103,7 @@
 
 				        </div>
 				    </div>
-				    <a href="#" class="more">more</a>
+				    <a href="#" class="more">▼</a>
 			    </div>
                 }
 		    </div>
@@ -112,7 +118,9 @@
 	                    </a>
 	                </li>
 		            }
-                    <a class="goTop" href="#">回到頂端</a>
+                    <li>
+	                	<a class="goTop" href="#">▲TOP</a>
+	                </li>
         	    </ul>
 		    </div>
 	    </div>

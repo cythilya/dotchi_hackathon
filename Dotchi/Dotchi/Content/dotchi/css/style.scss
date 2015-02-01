@@ -123,14 +123,18 @@ body ,html {
 			margin: 0 auto;
 			padding: 30px 0px;
 			h1{
-				background:url(../img/page_h1.png) no-repeat;
-				width: 108px;
-				height: 103px;
-				text-indent: -9999px;
-				background-size:100%;
 				display: inline-block;
 				vertical-align: top;
 				margin-right: 15px;
+				a{
+					display: inline-block;
+					background:url(../img/page_h1.png) no-repeat;
+					width: 108px;
+					height: 103px;
+					text-indent: -9999px;
+					background-size:100%;
+					vertical-align: top;
+				}
 			}
 			.inputArea{
 				width: 600px;
@@ -263,7 +267,7 @@ body ,html {
 						position: relative;
 						margin-bottom: 100px;
 						.ba{
-							background: #fdfbf7;
+							background: #fff9ed;
 							border-radius: 5px;
 							padding: 15px 25px;
 							box-shadow:0 2px 5px rgba(0,0,0,.4);
@@ -287,6 +291,7 @@ body ,html {
 							text-align: center;
 							transition: all 0.1s;
 							border-radius: 5px;
+							text-decoration: none;	
 							&:hover{
 								bottom: -45px;
 								transform: translate(0px,5px);
@@ -323,6 +328,15 @@ body ,html {
 									padding-left: 48px;
 									font-size: 16px;
 									position: relative;
+									span{
+										width:80px;
+										display:inline-block;
+										vertical-align:top;
+									}
+									.rating-bar{
+										display:inline-block;
+										vertical-align:top;
+									}
 									&.star{
 										&:after{
 											content: "";
@@ -422,6 +436,14 @@ body ,html {
 							}
 						}
 						.detail{
+							display: none;
+							height: 0;
+							transition: all 0.1s;
+							&.show{
+								display: block;
+								height: 100%;
+								transform: translate(0px,5px);
+							}
 							h3{
 								display:inline-block;
 								vertical-align: top;
@@ -552,6 +574,7 @@ body ,html {
 									border-bottom: 3px solid #a74a2b;
 									text-shadow: 0px -2px #a74a2b;
 									text-align: center;
+									text-decoration: none;	
 									&:active{
 										transform: translate(0px,5px);
 										border-bottom: 1px solid;
@@ -564,7 +587,9 @@ body ,html {
 				.right{
 					float: left;
 					margin-left: 30px;
+					position: relative;
 					.tagLst{
+						position: fixed;
 						li{
 							a{
 								color: #d15d36;
@@ -572,6 +597,7 @@ body ,html {
 								font-weight: bold;
 								display: block;
 								padding: 5px;
+								text-decoration: none;	
 								&:hover{
 									color: #555;
 								}
