@@ -15,7 +15,7 @@ namespace util.uco.dao
         internal static bool SaveMember(MemberInfo memberinfo)
         {
             string sql = @"
-if (select count(1) from member where ID = @id) = 0
+if (select count(1) from member where ID = @id) >= 0
 begin
 insert into member
 (ID, Name, Image)
