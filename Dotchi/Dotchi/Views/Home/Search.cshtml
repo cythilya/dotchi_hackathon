@@ -14,7 +14,7 @@
 			    <a href="#" class="button search"><span>尋找餐廳</span></a>
 		    </div>	
 		    <div class="fbArea">
-                @if(MemberDetail == null)
+                @if (MemberDetail.ID == null)
                 {
                     @* 登入前 *@
                     <a href="#" class="button fb"><span>FB登入</span></a>
@@ -43,7 +43,7 @@
 							    <li class="num"><span>打卡人數</span> <span>@(shopItem.Checkin)</span></li>
 							    <li class="friend">
 								    <span>看看朋友誰來吃？</span>
-								    @if(MemberDetail == null)
+								    @if(MemberDetail.ID == null)
                                     {
                                     <a href="#" class="friendBtn">FB Login</a>
                                     }
