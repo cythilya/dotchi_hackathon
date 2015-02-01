@@ -65,11 +65,11 @@
 							<div class="store">
 								<h3>詳細資訊</h3>
 								<ul>
-									<li>地址</li>
-									<li>電話</li>
-									<li>營業時間</li>
-									<li>價位</li>
-									<li>官網</li>
+									<li>地址 <span>@(shopItem.Address)</span></li> 
+									<li>電話 <span>@(shopItem.Phone)</span></li>
+									<li>營業時間 <span>@(shopItem.OpenTime)</span></li>
+									<li>價位 <span>@(shopItem.Price)</span></li>
+									<li>官網 <span><a href="@(shopItem.Website)" title="@(shopItem.Name)">@(shopItem.Website)</a></span></li>
 								</ul>
 							</div>
 				            <div class="commentItem">
