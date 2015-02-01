@@ -44,9 +44,10 @@ namespace Dotchi.Controllers
 
             bool result = uco.SaveMember(memberInfo);
 
-            var jsonObject = new { IsSuccess = result, ErrorMessage = "", ReturnData = "" };
+            var jsonObject = new { IsSuccess = true, ErrorMessage = "", ReturnData = "" };
             return Json(jsonObject); 
         }
+        
         public void GetMemberInfo(string MemberID) 
         {
             util.uco.model.dotchi.MemberInfo memberInfo = new util.uco.model.dotchi.MemberInfo();
@@ -55,10 +56,11 @@ namespace Dotchi.Controllers
             Dotchi.Models.Dotchi.MemberInfo memberDetail = new Dotchi.Models.Dotchi.MemberInfo();
             memberDetail.ID = memberInfo.ID;
             memberDetail.Name = memberInfo.Name;
-            memberDetail.Image = memberInfo.Name;
+            memberDetail.Image = memberInfo.Image;
 
             ViewBag.MemberInfo = memberDetail;
         }
+
         public List<Dotchi.Models.Dotchi.ShopInfo> GetShopList()
         {
             List<Dotchi.Models.Dotchi.ShopInfo> shopList = new List<Dotchi.Models.Dotchi.ShopInfo>();
@@ -333,11 +335,13 @@ namespace Dotchi.Controllers
             return recommendTagList;    
         }
 
+        /*
         public JsonResult Query() 
         {
             var jsonObject = new { IsSuccess = false, ErrorMessage = "", ReturnData = "" };
             return Json(jsonObject); 
         }
+        */
         #endregion
     }
 }
