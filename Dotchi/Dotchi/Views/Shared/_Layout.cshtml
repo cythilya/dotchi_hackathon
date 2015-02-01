@@ -3,12 +3,28 @@
     ViewBag.Title = "吃什麼，どっち - 讓朋友幫你決定吃什麼";
     ViewBag.Description = "吃什麼，どっち - 讓朋友幫你決定吃什麼";
     ViewBag.Cover = "";
+    var currentURL = "http://dotchi.apphb.com" + HttpContext.Current.Request.RawUrl;
 }
 <html>
 <head>
 <meta charset="utf-8">
 <title>@(ViewBag.Title)</title>
 <meta name="description" content="@(ViewBag.Description)" />
+<meta name="google-site-verification" content="66HCcYwJ0Hb8f3bZX2ZO0A2IR0BSgjjj7VEXPaoThrs" />
+
+@*Schema.org markup for Google+ *@
+<meta itemprop="name" content="@(ViewBag.Title)">
+<meta itemprop="description" content="@(ViewBag.Description)">
+<meta itemprop="image" content="@(ViewBag.Cove)">
+
+@* Open Graph data *@
+<meta property="og:title" content="@(ViewBag.Title)" />
+<meta property="og:description" content="描述" />
+<meta property="og:url" content="@(currentURL)" />
+<meta property="og:site_name" content="Dotchi">
+<meta property="og:type" content="article" />
+<meta property="og:image" content="@(ViewBag.Cove)" />
+
 <link rel="Shortcut Icon" type="image/x-icon" href="/Content/dotchi/img/favicon.ico">
 <link rel="stylesheet" href="/Content/common/css/reset-font-min.css">
 <link rel="stylesheet" href="/Content/common/css/clearfix.css">
