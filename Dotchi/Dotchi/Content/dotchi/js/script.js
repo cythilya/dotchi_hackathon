@@ -104,7 +104,17 @@ SP.module = {
 		var dSearchBtn = dModule.find('.search.button');
 		var dFBLoginBtn = dModule.find('.fb.button');
 		var dFriendLoginBtn = dModule.find('.friendBtn');
+		var dGoTop = dModule.find('.goTop');
+		var moreBtn = dModule.find('.more');
 		
+		var $rating = dModule.find('.rating-bar');
+		$rating.ratingForMultiple({
+            initScore: 5,
+            markScore: true, //分數mark
+            readOnly: false,
+            callback: function () { }
+		});		
+	
 		var login = function(){
 			FB.getLoginStatus(function (response) {
 				if (response.status === 'connected') {
@@ -175,6 +185,23 @@ SP.module = {
 			e.preventDefault();
 			login();
 		});
+
+        dGoTop.click(function(e) {
+            e.preventDefault();
+            var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+            $body.animate({scrollTop: 0}, 1000);
+        });
+
+        moreBtn.click(function (e) {
+            e.preventDefault();
+            var detail = $(this).parent().find('.detail');
+            detail.toggleClass("show");
+            if (detail.hasClass('show')) {
+                $(this).text("▲");
+            } else {
+                $(this).text("▼");
+            }
+        });
 		
 	}
 };
