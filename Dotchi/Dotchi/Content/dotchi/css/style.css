@@ -3,6 +3,7 @@ body, html {
   height: 100%;
   font-family: '微軟正黑體';
   font-size: 13px;
+  background: url(../img/bg.jpg) repeat;
 }
 
 .dotch {
@@ -31,6 +32,7 @@ body, html {
   text-indent: -9999px;
   text-align: center;
   margin: 40px auto;
+  background-size: 100%;
 }
 .dotch#index .main h2 {
   font-size: 30px;
@@ -80,7 +82,6 @@ body, html {
   height: 29px;
   top: 12px;
   left: 12px;
-  background-size: 50%;
 }
 .dotch#index .main .search span {
   font-size: 24px;
@@ -114,6 +115,13 @@ body, html {
 .dotch#index .main .button:active {
   transform: translate(0px, 5px);
   border-bottom: 1px solid;
+}
+.dotch#index .main img {
+  width: 600px;
+  height: auto;
+  display: block;
+  margin: 50px auto;
+  background-size: 50%;
 }
 .dotch#page .main {
   width: 960px;
@@ -206,7 +214,6 @@ body, html {
   background-color: #d15d36;
   border-bottom: 3px solid #a74a2b;
   text-shadow: 0px -2px #a74a2b;
-  background-size: 50%;
 }
 .dotch#page .main .search:after {
   content: "";
@@ -269,7 +276,7 @@ body, html {
   margin-bottom: 100px;
 }
 .dotch#page .main .content .left .card .ba {
-  background: #fff9ed;
+  background: #F5F5F5;
   border-radius: 5px;
   padding: 15px 25px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
@@ -279,7 +286,7 @@ body, html {
 .dotch#page .main .content .left .card .more {
   display: block;
   position: absolute;
-  background: #D15D36;
+  background: #EFAA94;
   width: 500px;
   height: 10px;
   padding: 50px 0 10px;
@@ -296,6 +303,7 @@ body, html {
 .dotch#page .main .content .left .card .more:hover {
   bottom: -45px;
   transform: translate(0px, 5px);
+  background: #E48769;
 }
 .dotch#page .main .content .left .card .img {
   width: 160px;
@@ -461,11 +469,25 @@ body, html {
 .dotch#page .main .content .left .card .detail .store ul li {
   margin: 5px 0;
 }
+.dotch#page .main .content .left .card .detail .store ul li em {
+  display: inline-block;
+  width: 65px;
+  vertical-align: top;
+}
 .dotch#page .main .content .left .card .detail .store ul li span {
-  margin-left: 5px;
+  margin-left: 10px;
+  width: 270px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 13px;
 }
 .dotch#page .main .content .left .card .detail .store ul li a {
   color: #d15d36;
+  margin-left: 10px;
+  width: 270px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 13px;
 }
 .dotch#page .main .content .left .card .detail .store ul li a:hover {
   color: #888;
@@ -514,7 +536,7 @@ body, html {
   border-radius: 5px;
   padding: 15px;
   position: relative;
-  background: #fdfbf7;
+  background: #fff;
 }
 .dotch#page .main .content .left .card .detail .commentItem .comment .say:before {
   top: -18px;
@@ -549,8 +571,9 @@ body, html {
   border-width: 0 15px 15px;
 }
 .dotch#page .main .content .left .card .detail .commentItem .comment .say .text {
-  color: #888;
+  color: #000;
   padding: 10px 0;
+  font-size: 15px;
 }
 .dotch#page .main .content .left .card .detail .commentItem .comment .say .image {
   max-width: 100%;
@@ -595,3 +618,5 @@ body, html {
 .dotch#page .main .content .right .tagLst li a:hover {
   color: #555;
 }
+
+/*# sourceMappingURL=style.css.map */
