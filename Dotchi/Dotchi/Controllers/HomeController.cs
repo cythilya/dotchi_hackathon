@@ -71,12 +71,12 @@ namespace Dotchi.Controllers
             shop1.ID = 1;
             shop1.Name = "くら寿司 藏壽司 Kura Sushi 松江南京店";
             shop1.Rating = 4;
-            shop1.Checkin = 9999;
+            shop1.Checkin = 7821;
             shop1.Cover = "http://goo.gl/x2M7oX";
-            shop1.Address = "KURA壽司(くら寿司) 松江南京店 台湾1號店";
+            shop1.Address = "台北市中山區南京東路二段101號B1";
             shop1.Phone = "(02)2568 - 1519";
             shop1.OpenTime = "11:00 ~ 22:00 ";
-            shop1.Price = "1000";
+            shop1.Price = "300~1000";
             shop1.Website = "https://www.facebook.com/kurasushi.songjiangnanjing";
 
             List<Dotchi.Models.Dotchi.FriendInfo> FriendList = new List<Dotchi.Models.Dotchi.FriendInfo>();
@@ -124,7 +124,7 @@ namespace Dotchi.Controllers
             comment2.ID = "12345yhte6u6uj7i7i7";
             comment2.Time = DateTime.Now;
             comment2.Image = "http://ppt.cc/SVyx";
-            comment2.Text = "好好吃，我們一直點一直點，好吃又好玩";
+            comment2.Text = "我覺得我應該再也無法說自己是不喜歡排隊的人了，因為我禮拜六又再度跑去排藏壽司XD，好好吃，我們一直點一直點，好吃又好玩，４０元的平價壽司居然提供現磨的山葵！";
 
             Dotchi.Models.Dotchi.UserInfo userInfo2 = new Dotchi.Models.Dotchi.UserInfo();
             userInfo2.UserName = "Jill Tzeng";
@@ -138,7 +138,7 @@ namespace Dotchi.Controllers
             Dotchi.Models.Dotchi.ShopInfo shop2 = new Dotchi.Models.Dotchi.ShopInfo();
             shop2.ID = 1;
             shop2.Name = "禾鶴亭日本料理餐廳";
-            shop2.Rating = 4;
+            shop2.Rating = 3;
             shop2.Checkin = 1349;
             shop2.Cover = "http://pic.pimg.tw/spark0416/1357310739-3160826581_m.jpg?v=1357310741";
             shop2.Address = "台北市松江路108巷3號";
@@ -167,7 +167,7 @@ namespace Dotchi.Controllers
             FriendList2.Add(friendItem23);
     
 
-            shop2.FriendDetail = FriendList;
+            shop2.FriendDetail = FriendList2;
 
             List<Dotchi.Models.Dotchi.Comment> CommentList2 = new List<Dotchi.Models.Dotchi.Comment>();
 
@@ -175,7 +175,7 @@ namespace Dotchi.Controllers
             comment21.ID = "13345yhte6u6uj7i7i7";
             comment21.Time = DateTime.Now;
             comment21.Image = "http://ppt.cc/hBjW";
-            comment21.Text = "最推薦的還是生魚片蓋飯，魚貨夠新鮮，視覺也被滿足，價格上雖不比剛歇業的三大便宜，但也算可以接受吃不飽的話可以再加點親子丼或是壽司類的餐點。";
+            comment21.Text = "今天上班整個就在想生魚片蓋飯...100元的生魚片蓋飯，便宜大碗阿，超推薦！！！還有他的miso湯，每次都讓人想加點。中午吃那麼好會不會天打雷霹呀~~";
 
             Dotchi.Models.Dotchi.UserInfo userInfo21 = new Dotchi.Models.Dotchi.UserInfo();
             userInfo21.UserName = "Ryan Liang";
@@ -187,7 +187,7 @@ namespace Dotchi.Controllers
             comment22.ID = "22345yhte6u6uj7i7i7";
             comment22.Time = DateTime.Now;
             comment22.Image = "http://ppt.cc/HLq-";
-            comment22.Text = "海膽丼看起來很好吃，炸蝦size很大。";
+            comment22.Text = "超新鮮享受之 …滿滿海味滿足之海膽丼看起來很好吃之炸蝦size很大，同時也被可樂餅給征服了";
 
             Dotchi.Models.Dotchi.UserInfo userInfo22 = new Dotchi.Models.Dotchi.UserInfo();
             userInfo22.UserName = "Wang Big-frog ";
@@ -201,7 +201,7 @@ namespace Dotchi.Controllers
             Dotchi.Models.Dotchi.ShopInfo shop3 = new Dotchi.Models.Dotchi.ShopInfo();
             shop3.ID = 1;
             shop3.Name = "品盛悅素軒-蔬食素食";
-            shop3.Rating = 4;
+            shop3.Rating = 3;
             shop3.Checkin = 2319;
             shop3.Cover = "http://ppt.cc/mXnm";
             shop3.Address = "台北市中山區南京東路二段206號";
@@ -235,7 +235,7 @@ namespace Dotchi.Controllers
             friendItem34.Thumbnail = "http://ppt.cc/RGen";
             FriendList3.Add(friendItem34);
 
-            shop3.FriendDetail = FriendList;
+            shop3.FriendDetail = FriendList3;
 
             List<Dotchi.Models.Dotchi.Comment> CommentList3 = new List<Dotchi.Models.Dotchi.Comment>();
 
