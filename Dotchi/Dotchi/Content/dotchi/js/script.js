@@ -104,7 +104,8 @@ SP.module = {
 		var dSearchBtn = dModule.find('.search.button');
 		var dFBLoginBtn = dModule.find('.fb.button');
 		var dFriendLoginBtn = dModule.find('.friendBtn');
-		
+        var dGoTop = dModule.find('.goTop');
+	
 		var login = function(){
 			FB.getLoginStatus(function (response) {
 				if (response.status === 'connected') {
@@ -175,6 +176,12 @@ SP.module = {
 			e.preventDefault();
 			login();
 		});
+
+        dGoTop.click(function(e) {
+            e.preventDefault();
+            var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+            $body.animate({scrollTop: 0}, 1000);
+        });
 		
 	}
 };
