@@ -61,6 +61,41 @@
 							    </li>
 						    </ul>
 					    </div>
+						<div class="detail">
+							<div class="store">
+								<h3>詳細資訊</h3>
+								<ul>
+									<li>地址</li>
+									<li>電話</li>
+									<li>營業時間</li>
+									<li>價位</li>
+									<li>官網</li>
+								</ul>
+							</div>
+				            <div class="commentItem">
+				            	<h3>朋友評價</h3>
+				            	@foreach (var commentItem in shopItem.CommentList)
+				            	{ 
+				            	<div class="comment">
+					            	<div class="userInfo">
+					                    <div class="userImage">
+					                    	<img src="https://graph.facebook.com/100000133231966/picture?type=large" alt="">
+					                    	<!-- <img src="@(commentItem.UserDetail.UserImage)" title="@(commentItem.UserDetail.UserName)" alt="@(commentItem.UserDetail.UserName)" /> -->
+					                    </div>
+					                    <div class="user">@(commentItem.UserDetail.UserName) <span>@(commentItem.Time)</span></div>
+					                </div>
+					                <div class="say">
+					                	<div class="text">@(commentItem.Text)</div>
+						                <div class="image">
+						                    <img src="@(commentItem.Image)" title="@(commentItem.UserDetail.UserName) at @(shopItem.Name)" alt="@(commentItem.UserDetail.UserName) at @(shopItem.Name)">
+						                </div>	
+					                </div>
+				            	</div>
+				            	}
+				                <a href="#" class="commentMore">更多朋友評價</a>
+				            </div>                   
+
+				        </div>
 				    </div>
 				    <a href="#" class="more">more</a>
 			    </div>
