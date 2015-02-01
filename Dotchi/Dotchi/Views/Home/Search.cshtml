@@ -57,20 +57,20 @@
 							    <li class="friend">
 								    <span>看看朋友誰來吃？</span>
 								    @if (MemberDetail.ID == null)
-            {
+                                    {
                                     <a href="#" class="friendBtn">FB Login</a>
-            }
-            else
-            {
+                                    }
+                                    else
+                                    {
 									<div class="friendList">
 						                @foreach (var friendItem in shopItem.FriendDetail)
-                      {
+                                         {
 						                <div class="friendItem">
 						                	<img src="@(friendItem.Thumbnail)" title="@(friendItem.Name)" alt="@(friendItem.Name)">
 						                </div>
-                      }
+                                        }
 						            </div>                 
-            }
+                                 }
 							    </li>
 						    </ul>
 					    </div>
@@ -88,12 +88,11 @@
 				            <div class="commentItem">
 				            	<h3>朋友評價</h3>
 				            	@foreach (var commentItem in shopItem.CommentList)
-                 { 
+                                { 
 				            	<div class="comment">
 					            	<div class="userInfo">
 					                    <div class="userImage">
-					                    	<img src="https://graph.facebook.com/100000133231966/picture?type=large" alt="">
-					                    	<!-- <img src="@(commentItem.UserDetail.UserImage)" title="@(commentItem.UserDetail.UserName)" alt="@(commentItem.UserDetail.UserName)" /> -->
+					                    	<img src="@(commentItem.UserDetail.UserImage)" title="@(commentItem.UserDetail.UserName)" alt="@(commentItem.UserDetail.UserName)" />
 					                    </div>
 					                    <div class="user">@(commentItem.UserDetail.UserName) <span>@(commentItem.Time)</span></div>
 					                </div>
@@ -104,7 +103,7 @@
 						                </div>	
 					                </div>
 				            	</div>
-                 }
+                                }
 				                <a href="#" class="commentMore">更多朋友評價</a>
 				            </div>                   
 				        </div>
@@ -116,14 +115,14 @@
 		    <div class="right">
 			    <ul class="tagLst">
 		            @foreach (var tagItem in RecommendTagList)
-              {
+                    {
 	                <li>
 	                    <a href="/Home/Search?q=@(tagItem.Name)">
 	                        <span class="tagName">@(tagItem.Name)</span>
 	                        <span class="shopNumer">( @(tagItem.Number) )</span>
 	                    </a>
 	                </li>
-              }
+                    }
                     <li>
 	                	<a class="goTop" href="#">▲TOP</a>
 	                </li>
