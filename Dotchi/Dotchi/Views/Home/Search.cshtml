@@ -1,10 +1,18 @@
 ﻿@{
-    ViewBag.Title = "Search";
+    if (!String.IsNullOrEmpty(ViewBag.QueryString))
+    {
+        ViewBag.Title = ViewBag.QueryString + " | 吃什麼，どっち - 讓朋友幫你決定吃什麼";
+    }
+    else
+    {
+        ViewBag.Title = "吃什麼，どっち - 讓朋友幫你決定吃什麼";
+    }
+    
     Layout = "~/Views/Shared/_Layout.cshtml";
     List<Dotchi.Models.Dotchi.ShopInfo> ShopList = ViewBag.ShopList as List<Dotchi.Models.Dotchi.ShopInfo>;
     List<Dotchi.Models.Dotchi.RecommendTag> RecommendTagList = ViewBag.RecommendTag as List<Dotchi.Models.Dotchi.RecommendTag>;
     Dotchi.Models.Dotchi.MemberInfo MemberDetail = ViewBag.MemberInfo as Dotchi.Models.Dotchi.MemberInfo;
-}
+    }
 <div id="page" class="dotch">
     <div class="main">
         <div class="header">
@@ -29,7 +37,7 @@
         </div>
 	    <div class="content">
 		    <div class="left">
-                @foreach(var shopItem in ShopList)
+                @foreach (var shopItem in ShopList)
                 {
 			    <div class="card">
 				    <div class="ba">
@@ -49,20 +57,20 @@
 							    <li class="friend">
 								    <span>看看朋友誰來吃？</span>
 								    @if (MemberDetail.ID == null)
-                                    {
+            {
                                     <a href="#" class="friendBtn">FB Login</a>
-                                    }
-                                    else 
-                                    {
+            }
+            else
+            {
 									<div class="friendList">
-						                @foreach(var friendItem in shopItem.FriendDetail)
-						                {
+						                @foreach (var friendItem in shopItem.FriendDetail)
+                      {
 						                <div class="friendItem">
 						                	<img src="@(friendItem.Thumbnail)" title="@(friendItem.Name)" alt="@(friendItem.Name)">
 						                </div>
-						                }
+                      }
 						            </div>                 
-                                    }
+            }
 							    </li>
 						    </ul>
 					    </div>
@@ -80,7 +88,7 @@
 				            <div class="commentItem">
 				            	<h3>朋友評價</h3>
 				            	@foreach (var commentItem in shopItem.CommentList)
-				            	{ 
+                 { 
 				            	<div class="comment">
 					            	<div class="userInfo">
 					                    <div class="userImage">
@@ -96,10 +104,9 @@
 						                </div>	
 					                </div>
 				            	</div>
-				            	}
+                 }
 				                <a href="#" class="commentMore">更多朋友評價</a>
 				            </div>                   
-
 				        </div>
 				    </div>
 				    <a href="#" class="more">▼</a>
@@ -108,15 +115,15 @@
 		    </div>
 		    <div class="right">
 			    <ul class="tagLst">
-		            @foreach(var tagItem in RecommendTagList)
-		            {
+		            @foreach (var tagItem in RecommendTagList)
+              {
 	                <li>
 	                    <a href="/Home/Search?q=@(tagItem.Name)">
 	                        <span class="tagName">@(tagItem.Name)</span>
 	                        <span class="shopNumer">( @(tagItem.Number) )</span>
 	                    </a>
 	                </li>
-		            }
+              }
                     <li>
 	                	<a class="goTop" href="#">▲TOP</a>
 	                </li>

@@ -1,6 +1,8 @@
 ﻿<!doctype html>
 @{
-    ViewBag.Title = "吃什麼，どっち - 讓朋友幫你決定吃什麼";
+    if (String.IsNullOrEmpty(ViewBag.Title)){
+        ViewBag.Title = "吃什麼，どっち - 讓朋友幫你決定吃什麼";
+    }
     ViewBag.Description = "吃什麼，どっち - 讓朋友幫你決定吃什麼";
     ViewBag.Cover = "/Content/dotchi/img/cover.png";
     var currentURL = "http://dotchi.apphb.com" + HttpContext.Current.Request.RawUrl;
@@ -15,7 +17,7 @@
 <meta itemprop="description" content="@(ViewBag.Description)">
 <meta itemprop="image" content="@(ViewBag.Cove)">
 <meta property="og:title" content="@(ViewBag.Title)" />
-<meta property="og:description" content="描述" />
+<meta property="og:description" content="@(ViewBag.Description)" />
 <meta property="og:url" content="@(currentURL)" />
 <meta property="og:site_name" content="Dotchi">
 <meta property="og:type" content="article" />
@@ -35,7 +37,6 @@
 
     ga('create', 'UA-44647801-4', 'auto');
     ga('send', 'pageview');
-
 </script>
 </head>
 <body>
