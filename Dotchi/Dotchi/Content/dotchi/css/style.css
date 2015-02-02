@@ -120,7 +120,7 @@ body, html {
   width: 600px;
   height: auto;
   display: block;
-  margin: 50px auto;
+  margin: 60px auto;
   background-size: 50%;
 }
 .dotch#page .main {
@@ -618,5 +618,3 @@ body, html {
 .dotch#page .main .content .right .tagLst li a:hover {
   color: #555;
 }
-
-/*# sourceMappingURL=style.css.map */
