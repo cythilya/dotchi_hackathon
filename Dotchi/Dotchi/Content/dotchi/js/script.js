@@ -74,7 +74,6 @@ SP.module = {
 									},
 									dataType: 'json',
 									error: function (xhr) {
-										console.log(xhr);
 										alert('請稍後再試一次。');
 									},
 									success: function (response) {
