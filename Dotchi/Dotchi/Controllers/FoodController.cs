@@ -7,7 +7,7 @@ using Dotchi.Models;
 
 namespace Dotchi.Controllers
 {
-    public class HomeController : Controller
+    public class FoodController : Controller
     {
         util.uco.dotchi uco = new util.uco.dotchi();
 

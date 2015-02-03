@@ -162,7 +162,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -459,7 +459,7 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Food\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -474,7 +474,7 @@
   <ItemGroup>
     <None Include="Content\dotchi\css\style.scss" />
     <None Include="Content\dotchi\wireframe\resources\chrome\axure-chrome-extension.crx" />
-    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Food\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ServerControl1\util.csproj">

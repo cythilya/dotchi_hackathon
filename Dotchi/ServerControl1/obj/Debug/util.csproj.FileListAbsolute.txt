@@ -7,3 +7,7 @@ D:\Dotchi\Dotchi\ServerControl1\bin\Debug\ServerControl1.pdb
 D:\Dotchi\Dotchi\ServerControl1\obj\Debug\ResolveAssemblyReference.cache
 D:\Dotchi\Dotchi\ServerControl1\obj\Debug\ServerControl1.dll
 D:\Dotchi\Dotchi\ServerControl1\obj\Debug\ServerControl1.pdb
+E:\private\dotchi\Dotchi\ServerControl1\bin\Debug\ServerControl1.dll
+E:\private\dotchi\Dotchi\ServerControl1\bin\Debug\ServerControl1.pdb
+E:\private\dotchi\Dotchi\ServerControl1\obj\Debug\ServerControl1.dll
+E:\private\dotchi\Dotchi\ServerControl1\obj\Debug\ServerControl1.pdb
