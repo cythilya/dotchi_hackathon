@@ -37,10 +37,10 @@ SP.module = {
 			var queryString = $.trim(dQueryInput.val());
 			
 			if(queryString){
-				top.location.href = '/Home/Search?q=' + queryString;
+				top.location.href = '/Food/Search?q=' + queryString;
 			}
 			else{
-				top.location.href = '/Home/Search';
+				top.location.href = '/Food/Search';
 			}
 		});
 		
@@ -65,7 +65,7 @@ SP.module = {
 								document.cookie = 'FBUID=' + ID + '; path=/';
 
 								$.ajax({
-									url: '/Home/SaveMemberInfo',
+									url: '/Food/SaveMemberInfo',
 									type: 'post',
 									data: {
 										"MemberID": ID,
@@ -79,7 +79,7 @@ SP.module = {
 									},
 									success: function (response) {
 										if (response.IsSuccess) {
-											top.location.href = '/Home/Search';
+											top.location.href = '/Food/Search';
 										}
 										else {
 											alert('請稍後再試一次。');
@@ -91,7 +91,7 @@ SP.module = {
 					}
 					else {
 						FB.login(function (response) {
-							top.location.href = '/Home/Search';
+							top.location.href = '/Food/Search';
 						});
 					}
 				});		
@@ -132,7 +132,7 @@ SP.module = {
 							document.cookie = 'FBUID=' + ID + '; path=/';
 
 							$.ajax({
-								url: '/Home/SaveMemberInfo',
+								url: '/Food/SaveMemberInfo',
 								type: 'post',
 								data: {
 									"MemberID": ID,
@@ -146,7 +146,7 @@ SP.module = {
 								},
 								success: function (response) {
 									if (response.IsSuccess) {
-										top.location.href = '/Home/Search';
+										top.location.href = '/Food/Search';
 									}
 									else {
 										alert('請稍後再試一次。');
@@ -158,7 +158,7 @@ SP.module = {
 				}
 				else {
 					FB.login(function (response) {
-						top.location.href = '/Home/Search';
+						top.location.href = '/Food/Search';
 					});
 				}
 			});		
@@ -169,10 +169,10 @@ SP.module = {
 			
 			var queryString = $.trim(dQueryInput.val());
 			if(queryString){
-				top.location.href = '/Home/Search?q=' + queryString;
+				top.location.href = '/Food/Search?q=' + queryString;
 			}
 			else{
-				top.location.href = '/Home/Search';
+				top.location.href = '/Food/Search';
 			}
 		});
 		
