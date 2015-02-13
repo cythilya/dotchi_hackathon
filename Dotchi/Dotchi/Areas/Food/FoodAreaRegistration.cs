@@ -16,7 +16,7 @@ namespace Dotchi.Areas.Food
         {
             context.MapRoute(
                 "Food_default",
-                "Food/{controller}/{action}/{id}",
+                "Food/Food/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }
