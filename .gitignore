@@ -13,7 +13,8 @@ Dotchi/Dotchi/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 Dotchi/Dotchi/obj/Debug/Dotchi.dll
 Dotchi/Dotchi/obj/Debug/Dotchi.pdb
 Dotchi/Dotchi/obj/Debug/ResolveAssemblyReference.cache
+Dotchi/Dotchi/obj/Debug/Dotchi.csproj.FileListAbsolute.txt
 Dotchi/Dotchi.suo
 Dotchi/Dotchi/Bin/ServerControl1.dll
 Dotchi/Dotchi/obj/Debug/Dotchi.csprojResolveAssemblyReference.cache
-Dotchi/ServerControl1/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+Dotchi/ServerControl1/obj/*
