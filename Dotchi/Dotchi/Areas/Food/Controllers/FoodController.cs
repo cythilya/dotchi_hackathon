@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Dotchi.Models;
+using Dotchi.Areas.Food;
 
-namespace Dotchi.Controllers
+
+namespace Dotchi.Areas.Food.Controllers
 {
     public class FoodController : Controller
     {
-        util.uco.dotchi uco = new util.uco.dotchi();
+       util.uco.dotchi uco = new util.uco.dotchi();
 
         #region view
         public ActionResult Index()
@@ -334,14 +335,6 @@ namespace Dotchi.Controllers
             ViewBag.RecommendTag = recommendTagList;
             return recommendTagList;    
         }
-
-        /*
-        public JsonResult Query() 
-        {
-            var jsonObject = new { IsSuccess = false, ErrorMessage = "", ReturnData = "" };
-            return Json(jsonObject); 
-        }
-        */
-        #endregion
+       #endregion
     }
 }

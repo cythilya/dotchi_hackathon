@@ -161,14 +161,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Food\Controllers\FoodController.cs" />
+    <Compile Include="Areas\Food\FoodAreaRegistration.cs" />
+    <Compile Include="Areas\Food\Models\Dochi.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Dochi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -466,11 +467,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Food\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Food\Views\Web.config" />
+    <Content Include="Areas\Food\Views\Index.cshtml" />
+    <Content Include="Areas\Food\Views\Search.cshtml" />
     <None Include="Content\dotchi\css\style.scss" />
     <None Include="Content\dotchi\wireframe\resources\chrome\axure-chrome-extension.crx" />
     <Content Include="Views\Food\Index.cshtml" />
