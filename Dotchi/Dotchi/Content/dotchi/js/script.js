@@ -47,7 +47,6 @@ SP.module = {
 		//facebook login
 		dFBLoginBtn.click(function(e){
 			e.preventDefault();
-
             var dThisLoginBtn = $(this);
 			FBUtil.after(function (FB) {
 				FB.getLoginStatus(function (response) {
@@ -60,9 +59,31 @@ SP.module = {
 								var ID = res.id;
 								var Name = res.first_name + res.last_name;
 								var UserImage = 'http://graph.facebook.com/'+ ID + '/picture?width=40&height=40';
+								//var userFriends = res.friends; //不可用
 
 								//save cookie
 								document.cookie = 'FBUID=' + ID + '; path=/';
+
+						        /*
+						        //取得有授權此app的朋友列表
+						        var SaveFriendList = function () {
+						            //抓取好友id
+						            FB.api('/me/friends', function (response) {
+						                if (!response || response.error) {
+						                    //取不到資料，報錯
+						                    // alert('系統有誤，請重新再試一次。');
+						                }
+						                else {
+						                    if (response.data.length) {
+						                        for (var i = 0; i < response.data.length; i++) {
+						                            var n = response.data[i].id;
+						                            FriendListArry.push(n);
+						                        }
+						                    }
+						                }
+						            });
+						        };
+						        */
 
 								$.ajax({
 									url: '/Food/SaveMemberInfo',
@@ -71,15 +92,15 @@ SP.module = {
 										"MemberID": ID,
 										"MemberName": Name,
 										"MemberImage": UserImage
+										//"Friends": userFriends
 									},
 									dataType: 'json',
 									error: function (xhr) {
 										console.log(xhr);
-										alert('請稍後再試一次。');
 									},
 									success: function (response) {
 										if (response.IsSuccess) {
-											top.location.href = '/Food/Search';
+											//top.location.href = '/Food/Search';
 										}
 										else {
 											alert('請稍後再試一次。');
@@ -92,7 +113,7 @@ SP.module = {
 					else {
 						FB.login(function (response) {
 							top.location.href = '/Food/Search';
-						});
+						},{ scope: 'user_friends,email' });
 					}
 				});		
 			});			
